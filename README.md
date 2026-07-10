@@ -1,0 +1,28 @@
+# mdTOhtmlBuild — нормативные документы СП → интерактивные HTML
+
+Лаборатория контент-воронки [komplid.ru](https://komplid.ru): превращаем корпус
+строительных нормативов (СП) из markdown в интерактивные HTML-страницы и готовим
+сетку строительных калькуляторов — для SEO/AEO/GEO-трафика маркетинг-сайта.
+
+## Структура
+
+| Папка | Что это |
+|---|---|
+| `docs/` | Стратегия и планы внедрения: [00 — стратегия SEO/AEO/GEO + blindspot-реестр](docs/00-STRATEGY-SEO-AEO-GEO.md) · [01 — СП-страницы](docs/01-SP-PAGES-PLAN.md) · [02 — калькуляторы](docs/02-CALCULATORS-PLAN.md) |
+| `normative-md/` | Корпус: 323 СП в markdown (конвертация Docling из PDF) + логи и манифест конвертации |
+| `sp-builder/` | **Генератор** md → самодостаточный интерактивный HTML (Python 3.11, stdlib). См. [sp-builder/README.md](sp-builder/README.md) |
+| `sp-html/` | Готовые страницы. Эталон: [СП 48.13330.2019 «Организация строительства»](sp-html/sp-48-13330-2019.html) + его JSON-модель |
+| `pdf-to-html/` | Ранний прототип конвертера (PDF-пайплайн, две темы). Дизайн-токены переехали в sp-builder |
+
+## Быстрый старт
+
+```bash
+python3 sp-builder/build.py "normative-md/SP_48.13330.2019_«СНиП 12-01-2004 Организация строительства».md"
+# → sp-html/sp-48-13330-2019.html  (открыть в браузере)
+```
+
+## Связанные репозитории
+
+- [komplid-marketing](https://github.com/0odonkihooto0/komplid-marketing) — маркетинг-сайт (Next.js), куда интегрируются страницы и калькуляторы
+- [Komplid2](https://github.com/0odonkihooto0/Komplid2) — SaaS-приложение (app.komplid.ru)
+- [plannotator/effective-html](https://github.com/plannotator/effective-html) — идейная база формата «один самодостаточный HTML»
