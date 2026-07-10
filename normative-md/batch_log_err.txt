@@ -1,0 +1,3 @@
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  84%|########4 | 647/770 [00:00<00:00, 6456.55it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 6471.64it/s]
+C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\docling_core\types\doc\document.py:3036: UserWarning: Table cell bbox coordinate r on page 27 is outside page bounds: value=609.1138223409653 > hi=595.3200073242188; clamping to 595.3200073242188
+  cell.bbox = self._clamp_bbox_to_page(
