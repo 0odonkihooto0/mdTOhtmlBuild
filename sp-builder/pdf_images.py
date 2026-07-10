@@ -15,11 +15,16 @@ MIN_HEIGHT = 120
 MAX_WIDTH = 1400
 
 
+JPEG_QUALITY = 82  # баланс вес/читаемость сканов форм и рисунков
+
+
 def extract_images(pdf_path: Path, out_dir: Path) -> list[Path]:
-    """Извлекает растровые изображения PDF в порядке чтения → out_dir/fig-N.png."""
+    """Извлекает растровые изображения PDF в порядке чтения → out_dir/fig-N.jpg."""
     # кэш: PDF не меняются — повторные прогоны переиспользуют извлечённое
+    # (принимаем и старые png-кэши, и новые jpg)
     if out_dir.is_dir():
-        cached = sorted(out_dir.glob("fig-*.png"),
+        cached = sorted((p for p in out_dir.glob("fig-*")
+                         if p.suffix in (".jpg", ".png")),
                         key=lambda p: int(p.stem.split("-")[1]))
         if cached:
             return cached
@@ -53,8 +58,8 @@ def extract_images(pdf_path: Path, out_dir: Path) -> list[Path]:
     if pixmaps:
         out_dir.mkdir(parents=True, exist_ok=True)
         for i, pix in enumerate(pixmaps, 1):
-            p = out_dir / f"fig-{i}.png"
-            pix.save(str(p))
+            p = out_dir / f"fig-{i}.jpg"
+            pix.save(str(p), jpg_quality=JPEG_QUALITY)
             paths.append(p)
     return paths
 

@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СП 33.13330.2012 «Расчет на прочность стальных трубопроводов» — текст с навигацией и поиском</title>
+<meta property="og:title" content="СП 33.13330.2012 «Расчет на прочность стальных трубопроводов» — текст с навигацией и поиском">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<script>(function(){try{var t=localStorage.getItem('komplid-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "СП 33.13330.2012 «Расчет на прочность стальных трубопроводов»", "inLanguage": "ru", "about": "Свод правил (строительные нормы Российской Федерации)", "isBasedOn": "https://minstroyrf.gov.ru/", "datePublished": "2011-12-29", "dateModified": null, "author": {"@type": "Organization", "name": "Минстрой России"}, "publisher": {"@type": "Organization", "name": "Komplid", "url": "https://komplid.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://komplid.ru/"}, {"@type": "ListItem", "position": 2, "name": "Нормативные документы", "item": "https://komplid.ru/normativ"}, {"@type": "ListItem", "position": 3, "name": "СП 33.13330.2012", "item": null}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-ui:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,Monaco,monospace;
+  --r-2:6px;--r-3:8px;--r-4:12px;
+  --bg:oklch(0.985 0.002 85);--ink:oklch(0.28 0.02 255);
+  --card:#fff;--border:oklch(0.90 0.004 255);
+  --muted:oklch(0.55 0.01 255);--inset:oklch(0.95 0.003 85);
+  --accent:oklch(0.72 0.14 65);--accent-soft:oklch(0.72 0.14 65 / 0.14);
+  --accent-ink:oklch(0.45 0.10 65);--ok:oklch(0.62 0.14 145);
+  --warn:oklch(0.72 0.14 75);--err:oklch(0.58 0.18 25);--info:oklch(0.55 0.14 250);
+  --shadow-1:0 1px 3px oklch(0.20 0.01 255/0.06);--shadow-2:0 4px 12px oklch(0.20 0.01 255/0.08);
+}
+html[data-theme="dark"]{
+  --bg:oklch(0.17 0.01 255);--ink:oklch(0.94 0.004 255);
+  --card:oklch(0.22 0.01 255);--border:oklch(0.32 0.01 255);
+  --muted:oklch(0.62 0.01 255);--inset:oklch(0.20 0.01 255);
+  --accent:oklch(0.75 0.13 65);--accent-soft:oklch(0.75 0.13 65/0.18);
+  --accent-ink:oklch(0.82 0.10 65);
+  --shadow-1:0 1px 3px oklch(0 0 0/0.3);--shadow-2:0 4px 12px oklch(0 0 0/0.4);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--ink);line-height:1.6;
+  font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:60}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;
+  padding:10px 20px;background:color-mix(in oklch,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.topbar .crumbs{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.topbar .crumbs a{color:var(--muted)}
+.topbar .spacer{flex:1}
+.iconbtn{width:34px;height:34px;border-radius:var(--r-2);border:1px solid var(--border);
+  background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;
+  font-size:15px;flex:none}
+.iconbtn:hover{background:var(--accent-soft)}
+#tocToggle{display:none}
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);max-width:1280px;margin:0 auto}
+.toc{position:sticky;top:55px;align-self:start;max-height:calc(100vh - 55px);overflow-y:auto;
+  padding:28px 20px 48px 28px;border-right:1px solid var(--border);font-size:13px}
+.toc h3{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--muted);margin:18px 0 10px;font-weight:600}
+.toc ul{list-style:none}
+.toc li{margin:1px 0}
+.toc .trow{display:flex;align-items:flex-start}
+.toc .tw{flex:none;width:17px;height:20px;margin-top:3px;border:none;background:none;
+  color:var(--muted);cursor:pointer;font-size:9px;padding:0;transition:transform .15s}
+.toc .tw::before{content:"▸"}
+.toc .tw.open{transform:rotate(90deg);color:var(--accent-ink)}
+.toc .tw-sp{flex:none;width:17px}
+.toc a{flex:1;min-width:0;color:var(--ink);display:block;padding:4px 8px 4px 2px;
+  border-radius:var(--r-2);font-size:12.8px;line-height:1.35}
+.toc a:hover{background:var(--accent-soft);color:var(--accent-ink);text-decoration:none}
+.toc a.active{background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
+.toc ul.sub{margin-left:15px;border-left:1px solid var(--border);padding-left:2px}
+.toc ul.sub a{font-size:12.2px;color:var(--muted)}
+.toc ul.sub ul.sub a{font-size:11.8px}
+.toc .num{font-family:var(--font-mono);font-size:10.5px;color:var(--accent);margin-right:6px}
+#search{width:100%;padding:8px 11px;border:1px solid var(--border);border-radius:var(--r-2);
+  background:var(--card);color:var(--ink);font:inherit;font-size:13px}
+#search:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+#sres{margin-top:8px}
+#sres .hit{display:block;padding:7px 9px;border:1px solid var(--border);border-radius:var(--r-2);
+  margin-bottom:6px;background:var(--card);cursor:pointer;font-size:12px;line-height:1.4}
+#sres .hit:hover{border-color:var(--accent)}
+#sres .hit .n{font-family:var(--font-mono);color:var(--accent);font-size:10.5px;font-weight:600}
+#sres mark{background:var(--accent-soft);color:var(--accent-ink);border-radius:2px;padding:0 1px}
+#sres .more{font-size:11.5px;color:var(--muted);padding:4px 9px}
+.main{padding:36px 52px 120px;max-width:860px;min-width:0}
+.doc-head{margin-bottom:40px;padding-bottom:26px;border-bottom:1px solid var(--border)}
+.eyebrow{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--accent-ink);margin-bottom:10px;font-weight:600}
+h1{font-weight:650;font-size:30px;line-height:1.22;letter-spacing:-.02em;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);
+  font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);
+  background:var(--card);color:var(--muted)}
+.badge b{color:var(--ink);font-weight:600}
+.badge.st-active{border-color:color-mix(in oklch,var(--ok) 40%,transparent);color:var(--ok)}
+.badge.st-active b{color:var(--ok)}
+.disclaimer{font-size:12.5px;color:var(--muted);background:var(--inset);
+  border:1px solid var(--border);border-radius:var(--r-3);padding:10px 14px;margin:14px 0}
+.tldr{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:var(--r-3);padding:18px 22px;font-size:14.5px;box-shadow:var(--shadow-1);margin:18px 0}
+.tldr .lbl{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;
+  letter-spacing:.11em;color:var(--accent-ink);font-weight:600;display:block;margin-bottom:7px}
+.hl-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.hl-chips a{font-size:12.5px;border:1px solid var(--border);border-radius:999px;
+  padding:5px 12px;background:var(--card);color:var(--ink)}
+.hl-chips a:hover{border-color:var(--accent);color:var(--accent-ink);text-decoration:none}
+.sec{margin-bottom:52px;scroll-margin-top:70px}
+.sec>h2{font-size:22px;font-weight:650;letter-spacing:-.01em;margin-bottom:18px;
+  padding-bottom:8px;border-bottom:1px solid var(--border);scroll-margin-top:70px}
+.sec>h2 .num,.subsec>h3 .num{display:inline-flex;align-items:center;justify-content:center;
+  min-width:26px;height:24px;padding:0 8px;background:var(--accent-soft);color:var(--accent-ink);
+  font-family:var(--font-mono);font-size:11px;font-weight:600;border-radius:var(--r-2);
+  margin-right:10px;vertical-align:2px}
+.subsec{margin:26px 0;scroll-margin-top:70px}
+.subsec>h3{font-size:17px;font-weight:650;margin-bottom:12px;scroll-margin-top:70px}
+h4.subhead{font-size:14.5px;font-weight:650;margin:20px 0 10px;color:var(--accent-ink)}
+.clause{position:relative;margin:0 0 12px;padding-left:66px;font-size:14.5px;
+  scroll-margin-top:70px;border-radius:var(--r-2)}
+.clause .cnum{position:absolute;left:0;top:2px;font-family:var(--font-mono);font-size:11.5px;
+  font-weight:600;letter-spacing:.02em}
+.clause .cnum a{color:var(--accent)}
+.clause .cnum a:hover{text-decoration:none;color:var(--accent-ink)}
+.acopy{position:absolute;left:-26px;top:0;width:22px;height:22px;border:none;cursor:pointer;
+  background:transparent;color:var(--muted);font-size:13px;opacity:0;border-radius:var(--r-2)}
+.clause:hover .acopy{opacity:1}
+.acopy:hover{color:var(--accent-ink);background:var(--accent-soft)}
+.clause.flash{background:var(--accent-soft);transition:background 1.2s}
+p.bp{margin:0 0 12px;font-size:14.5px}
+ul.cl{margin:2px 0 14px 84px;font-size:14.2px}
+ul.cl li{margin:0 0 7px;padding-left:2px}
+figure.fig{margin:20px 0;border:1px solid var(--border);border-radius:var(--r-3);
+  overflow:hidden;box-shadow:var(--shadow-1);background:#fff}
+figure.fig img{display:block;max-width:100%;height:auto;margin:0 auto}
+.img-missing{background:var(--inset);border:1px dashed var(--border);border-radius:var(--r-3);
+  padding:14px 18px;margin:16px 0;font-size:13px;color:var(--muted)}
+figure.tbl{margin:20px 0;overflow-x:auto;border:1px solid var(--border);
+  border-radius:var(--r-3);box-shadow:var(--shadow-1)}
+figure.tbl table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
+figure.tbl th{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;
+  letter-spacing:.06em;text-align:left;color:var(--muted);padding:10px 14px;
+  border-bottom:2px solid var(--border);background:var(--inset)}
+figure.tbl td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+figure.tbl tr:last-child td{border-bottom:none}
+figure.tbl tr:hover td{background:var(--accent-soft)}
+dl.glossary dt{font-weight:650;font-size:14.5px;padding:13px 0 3px;border-top:1px solid var(--border);
+  scroll-margin-top:70px}
+dl.glossary dt .num{font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-right:8px}
+dl.glossary dd{font-size:14px;color:var(--ink);padding:0 0 12px;margin:0}
+dl.glossary .src{display:block;font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px}
+.std{font-family:var(--font-mono);font-size:12.5px;color:var(--ok);white-space:nowrap}
+a.std:hover{text-decoration:underline}
+a.bibref{font-family:var(--font-mono);font-size:12px}
+ol.biblio{margin:14px 0 0;font-size:13.5px;list-style:none}
+ol.biblio li{margin-bottom:10px;scroll-margin-top:70px;padding-left:44px;position:relative}
+ol.biblio .bibn{position:absolute;left:0;font-family:var(--font-mono);font-size:12px;
+  color:var(--accent);font-weight:600}
+.cta{display:flex;gap:14px;align-items:center;background:var(--accent-soft);
+  border:1px solid color-mix(in oklch,var(--accent) 35%,transparent);
+  border-radius:var(--r-3);padding:16px 20px;margin:22px 0;font-size:14px}
+.cta a{font-weight:600;white-space:nowrap}
+.faq details{border:1px solid var(--border);border-radius:var(--r-3);background:var(--card);
+  margin-bottom:10px;box-shadow:var(--shadow-1)}
+.faq summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:14.5px;list-style:none;
+  display:flex;gap:10px;align-items:center}
+.faq summary::before{content:"▸";font-family:var(--font-mono);color:var(--accent);
+  transition:transform .2s;font-size:12px}
+.faq details[open] summary::before{transform:rotate(90deg)}
+.faq .a{padding:0 18px 16px 40px;font-size:14px;color:var(--ink)}
+.related{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:14px}
+.related a{display:block;border:1px solid var(--border);border-radius:var(--r-3);
+  background:var(--card);padding:14px 16px;font-size:13.5px;box-shadow:var(--shadow-1)}
+.related a:hover{border-color:var(--accent);text-decoration:none}
+.related .k{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:5px}
+footer.doc-foot{margin-top:64px;padding-top:22px;border-top:1px solid var(--border);
+  font-size:12.5px;color:var(--muted)}
+details.docinfo{margin:16px 0;font-size:13px}
+details.docinfo summary{cursor:pointer;color:var(--muted);font-size:13px}
+details.docinfo .body{padding:12px 0 0;color:var(--muted)}
+details.docinfo .body p{margin-bottom:8px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:fixed;left:0;top:55px;bottom:0;width:min(320px,86vw);background:var(--bg);
+    z-index:55;transform:translateX(-102%);transition:transform .2s;border-right:1px solid var(--border);
+    box-shadow:var(--shadow-2);max-height:none}
+  .toc.open{transform:none}
+  #tocToggle{display:grid}
+  .main{padding:28px 20px 90px}
+  .clause{padding-left:0;padding-top:20px}
+  .clause .cnum{top:0}
+  .acopy{left:auto;right:0;opacity:.5}
+  ul.cl{margin-left:22px}
+}
+@media print{
+  .topbar,.toc,#progress,.acopy,#search,#sres,.cta,.related{display:none!important}
+  .layout{display:block}
+  .main{max-width:none;padding:0}
+  body{font-size:11.5pt;background:#fff;color:#000}
+  .sec{break-inside:avoid-page}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header class="topbar">
+  <button class="iconbtn" id="tocToggle" aria-label="Оглавление">☰</button>
+  <nav class="crumbs"><a href="https://komplid.ru/">Komplid</a> · <a href="https://komplid.ru/normativ">Нормативные документы</a> · СП 33.13330.2012</nav>
+  <span class="spacer"></span>
+  <button class="iconbtn" id="themeBtn" aria-label="Сменить тему">◐</button>
+</header>
+<div class="layout">
+<nav class="toc" id="toc">
+  <h3>Поиск по документу</h3>
+  <input id="search" type="search" placeholder="Например: скрытые работы" autocomplete="off">
+  <div id="sres"></div>
+  <h3>Содержание</h3>
+  <ul><li><div class="trow"><span class="tw-sp"></span><a href="#vvedenie">Введение</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#sec-1"><span class="num">1</span>Область применения</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#sec-2"><span class="num">2</span>Нормативные ссылки</a></div></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-3"><span class="num">3</span>Термины и определения</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-1"><span class="num">3.1</span>анкер</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-2"><span class="num">3.2</span>балластировка трубопровода</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-3"><span class="num">3.3</span>минимальная толщина стенки</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-4"><span class="num">3.4</span>номинальная толщина стенки трубы</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-5"><span class="num">3.5</span>номинальный диаметр</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-6"><span class="num">3.6</span>рабочее давление</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-7"><span class="num">3.7</span>расчетная толщина стенки трубопровода</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-8"><span class="num">3.8</span>соединительные детали</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#term-3-9"><span class="num">3.9</span>упругий изгиб</a></div></li></ul></li><li><div class="trow"><span class="tw-sp"></span><a href="#sec-4"><span class="num">4</span>Обозначения и сокращения</a></div></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-5"><span class="num">5</span>Общие положения</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#p-5-1"><span class="num">5.1</span>Для трубопроводов следует применять тру…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-5-2"><span class="num">5.2</span>Расчет трубопроводов на прочность и уст…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-5-3"><span class="num">5.3</span>Поверочный расчет трубопроводов следует…</a></div></li></ul></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-6"><span class="num">6</span>Нагрузки и воздействия</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-1"><span class="num">6.1</span>Расчет трубопроводов на прочность следу…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-2"><span class="num">6.2</span>Коэффициенты надежности по нагрузке  f…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-3"><span class="num">6.3</span>Нормативные нагрузки от собственного ве…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-4"><span class="num">6.4</span>Нормативное значение воздействия от пре…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-5"><span class="num">6.5</span>Нормативное значение давления транспорт…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-6"><span class="num">6.6</span>Нормативную нагрузку от веса транспорти…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-7"><span class="num">6.7</span>Нормативный температурный перепад в тру…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-8"><span class="num">6.8</span>Нормативную снеговую нагрузку на единиц…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-9"><span class="num">6.9</span>Нормативную нагрузку от обледенения на…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-10"><span class="num">6.10</span>Нормативную ветровую нагрузку на единиц…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-11"><span class="num">6.11</span>Нормативные значения нагрузок и воздейс…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-12"><span class="num">6.12</span>Сейсмические воздействия на надземные и…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-13"><span class="num">6.13</span>Нагрузки и воздействия, вызываемые резк…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-14"><span class="num">6.14</span>Нагрузки и воздействия от неравномерных…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-6-15"><span class="num">6.15</span>Нормативные нагрузки и коэффициенты над…</a></div></li></ul></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-7"><span class="num">7</span>Расчетные характеристики материалов труб и соединительных деталей</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-1"><span class="num">7.1</span>Расчетные сопротивления материала труб…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-2"><span class="num">7.2</span>Нормативные сопротивления Run и Ryn сле…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-3"><span class="num">7.3</span>Значения коэффициентов надежности по ма…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-4"><span class="num">7.4</span>Значения поправочных коэффициентов наде…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-5"><span class="num">7.5</span>Значения коэффициента надежности по отв…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-6"><span class="num">7.6</span>Значения коэффициента условий работы …</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-7-7"><span class="num">7.7</span>Расчетные сопротивления сварных швов, с…</a></div></li></ul></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-8"><span class="num">8</span>Определение толщин стенок труб и соединительных деталей</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#p-8-1"><span class="num">8.1</span>Расчетные толщины стенок труб и соедини…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-8-2"><span class="num">8.2</span>Трубопроводы с толщиной стенки, определ…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-8-3"><span class="num">8.3</span>Значения коэффициента несущей способнос…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-8-4"><span class="num">8.4</span>Для подземных трубопроводов, имеющих от…</a></div></li></ul></li><li><div class="trow"><button class="tw" aria-label="Развернуть"></button><a href="#sec-9"><span class="num">9</span>Проверка прочности и устойчивости трубопроводов</a></div><ul class="sub" hidden><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-1"><span class="num">9.1</span>Поверочный расчет трубопровода на прочн…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-2"><span class="num">9.2</span>Определение усилий от расчетных нагрузо…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-3"><span class="num">9.3</span>Расчетная схема трубопровода должна отр…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-4"><span class="num">9.4</span>В качестве расчетной схемы трубопровода…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-5"><span class="num">9.5</span>Значение коэффициента повышения гибкост…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-6"><span class="num">9.6</span>Коэффициент гибкости тройниковых соедин…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-7"><span class="num">9.7</span>Значения коэффициентов интенсификации н…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-8"><span class="num">9.8</span>Арматуру, расположенную на трубопроводе…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-9"><span class="num">9.9</span>Подземные и наземные (в насыпи) трубопр…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-10"><span class="num">9.10</span>Проверку на прочность подземных и назем…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-11"><span class="num">9.11</span>Продольные осевые напряжения  пр .N оп…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-12"><span class="num">9.12</span>Для предотвращения недопустимых пластич…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-13"><span class="num">9.13</span>Максимальные (фибровые) суммарные продо…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-14"><span class="num">9.14</span>Проверку общей устойчивости трубопровод…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-15"><span class="num">9.15</span>Эквивалентное продольное осевое усилие…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-16"><span class="num">9.16</span>Устойчивость положения (балластировка)…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-17"><span class="num">9.17</span>Вес засыпки трубопроводов на русловых у…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-18"><span class="num">9.18</span>Расчетная несущая способность анкерного…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-19"><span class="num">9.19</span>Надземные (открытые) трубопроводы следу…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-20"><span class="num">9.20</span>Проверку на прочность надземных трубопр…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-21"><span class="num">9.21</span>Максимальные фибровые суммарные продоль…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-22"><span class="num">9.22</span>При определении продольных усилий и изг…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-23"><span class="num">9.23</span>Балочные системы надземных трубопроводо…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-24"><span class="num">9.24</span>Трубопроводы балочных, шпренгельных, ар…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-25"><span class="num">9.25</span>При скоростях ветра, вызывающих колебан…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-26"><span class="num">9.26</span>Расчет оснований, фундаментов и самих о…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-27"><span class="num">9.27</span>Опоры (включая основания и фундаменты)…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-28"><span class="num">9.28</span>Нагрузки на опоры, возникающие от возде…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-29"><span class="num">9.29</span>Нагрузки на неподвижные (мертвые) опоры…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-30"><span class="num">9.30</span>Продольно-подвижные и свободноподвижные…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-31"><span class="num">9.31</span>При расчете опор арочных систем, анкерн…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-32"><span class="num">9.32</span>Расчет трубопроводов на прочность с уче…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-33"><span class="num">9.33</span>Трубопроводы должны рассчитываться на о…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-34"><span class="num">9.34</span>Расчет подземных трубопроводов и трубоп…</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#p-9-35"><span class="num">9.35</span>Расчет надземных трубопроводов на опора…</a></div></li></ul></li><li><div class="trow"><span class="tw-sp"></span><a href="#pril-a"><span class="num">А</span>(рекомендуемое)</a></div></li><li><div class="trow"><span class="tw-sp"></span><a href="#biblio">Библиография</a></div></li></ul>
+</nav>
+<main class="main">
+<header class="doc-head" data-s data-n="СП 33.13330.2012">
+  <div class="eyebrow">Свод правил · СНиП 2.04.12-86</div>
+  <h1>СП 33.13330.2012 «Расчет на прочность стальных трубопроводов»</h1>
+  <div class="badges"><span class="badge">Приказ Минстроя <b>№ 621</b> от 29.12.2011</span><span class="badge">Введён <b>01.01.2013</b></span><span class="badge">Взамен <b>СНиП 2.04.12-86</b></span></div>
+  
+  <div class="disclaimer">Справочная интерактивная копия для удобной работы с документом.
+  Не является официальным опубликованием. Официальный источник —
+  <a href="https://minstroyrf.gov.ru/" rel="noopener">Минстрой России</a>.
+  Перед применением проверяйте актуальность редакции и перечень обязательных требований.</div>
+  
+  <details class="docinfo"><summary>О документе: разработчики, утверждение, регистрация, ключевые слова</summary><div class="body"><p>Цели и принципы стандартизации в Российской Федерации установлены Федеральным законом от 27 декабря 2002 г. № 184-ФЗ «О техническом регулировании», а правила разработки постановлением Правительства Российской Федерации от 19 ноября 2008 г. № 858 «О порядке разработки и утверждения сводов правил».</p><p>- 1 ИСПОЛНИТЕЛЬ - Инжиниринговая нефтегазовая компания - Всероссийский научноисследовательский институт по строительству и эксплуатации трубопроводов, объектов ТЭК (ОАО ВНИИСТ)</p><p>2 ВНЕСЕН Техническим комитетом по стандартизации ТК 465 «Строительство»</p><p>- 3 ПОДГОТОВЛЕН к утверждению Департаментом архитектуры, строительства и градостроительной политики</p><p>- 4 УТВЕРЖДЕН приказом Министерства регионального развития Российской Федерации (Минрегион России) от 29 декабря 2011 г. № 621 и введен в действие с 01 января 2013 г.</p><p>- 5 ЗАРЕГИСТРИРОВАН Федеральным агентством по техническому регулированию и метрологии (Росстандарт). Пересмотр СП 33.13330.2010 «СНиП 2.04.12-86 Расчет на прочность стальных трубопроводов»</p><p>Информация об изменениях к настоящему своду правил публикуется в ежегодно издаваемом информационном указателе «Национальные стандарты», а текст изменений и поправок - в ежемесячно издаваемых информационных указателях «Национальные стандарты». В случае пересмотра (замены) или отмены настоящего свода правил соответствующее уведомление будет опубликовано в ежемесячно издаваемом информационном указателе «Национальные стандарты». Соответствующая информация, уведомление и тексты размещаются также в информационной системе общего пользования - на официальном сайте разработчика (Минрегион России) в сети Интернет</p><p>© Минрегион России, 2011</p><p>Настоящий нормативный документ не может быть полностью или частично воспроизведен, тиражирован и распространен в качестве официального издания на территории Российской Федерации без разрешения Минрегиона России</p><p>Дата введения 2013-01-01</p></div></details>
+</header>
+<section class="sec" id="vvedenie" data-s data-n="Введение"><h2>Введение</h2><p class="bp">Настоящий свод правил составлен с учетом требований федеральных законов от 27 декабря 2002 г. № 184-ФЗ «О техническом регулировании», от 30 декабря 2009 г. № 384-ФЗ «Технический регламент о безопасности зданий и сооружений».</p>
+<p class="bp">Актуализация выполнена авторским коллективом ОАО ВНИИСТ - канд. техн. наук В.В. Рождественский -руководитель темы, инж. В.П. Ханкин .</p></section>
+<section class="sec" id="sec-1"><h2><span class="num">1</span>Область применения</h2><p class="bp">Настоящий свод правил распространяется на стальные трубопроводы (в дальнейшем - трубопроводы) различного назначения номинальным диаметром до 1400 включ., предназначенные для транспортирования жидких и газообразных сред давлением до 10 МПа и температурой от минус 70  С до плюс 450  С включ., и устанавливает требования к расчету их на прочность и устойчивость.</p>
+<p class="bp">Настоящий свод правил не распространяется на магистральные и промысловые газои нефтепроводы, технологические и шахтные трубопроводы, на трубопроводы, работающие под вакуумом и испытывающие динамические воздействия транспортируемой среды, трубопроводы особого назначения (атомных установок, передвижных агрегатов, гидро- и пневмотранспорта и др.), а также на трубопроводы, регламентированные в <a class="bibref" href="#bib-1">[1]</a>.</p></section>
+<section class="sec" id="sec-2"><h2><span class="num">2</span>Нормативные ссылки</h2><p class="bp">В настоящем своде правил приведены ссылки на следующие нормативные документы:</p>
+<p class="bp"><span class="std">ГОСТ Р 52720-2007</span> Арматура трубопроводная. Термины и определения</p>
+<p class="bp"><span class="std">ГОСТ 12.1.007-76</span> ССБТ. Вредные вещества. Классификация и общие требования безопасности</p>
+<p class="bp"><span class="std">СП 14.13330.2011</span> «СНиП II-7-81* Строительство в сейсмических районах»</p>
+<p class="bp"><span class="std">СП 16.13330.2011</span> «СНиП II-23-81* Стальные конструкции»</p>
+<p class="bp"><span class="std">СП 20.13330.2011</span> «<span class="std">СНиП 2.01.07-85</span>* Нагрузки и воздействия»</p>
+<p class="bp"><span class="std">СП 24.13330.2011</span> «<span class="std">СНиП 2.02.03-85</span> Свайные фундаменты»</p>
+<p class="bp"><span class="std">СП 35.13330.2011</span> «<span class="std">СНиП 2.05.03-84</span>* Мосты и трубы»</p>
+<p class="bp">Примечание - При пользовании настоящим сводом правил целесообразно проверить действие ссылочных стандартов и классификаторов в информационной системе общего пользования - на официальном сайте национального органа Российской Федерации по стандартизации в сети Интернет или по ежегодно издаваемому информационному указателю «Национальные стандарты», который опубликован по состоянию на 1 января текущего года, и по соответствующим ежемесячно издаваемым информационным указателям, опубликованным в текущем году. Если ссылочный документ заменен (изменен), то при пользовании настоящим сводом правил следует руководствоваться замененным (измененным) документом. Если ссылочный материал отменен без замены, то положение, в котором дана ссылка на него, применяется в части, не затрагивающей эту ссылку.</p></section>
+<section class="sec" id="sec-3"><h2><span class="num">3</span>Термины и определения</h2><p class="bp">В настоящем своде правил применены следующие термины с соответствующими определениями:</p><dl class="glossary"><dt id="term-3-1" data-s data-n="3.1"><span class="num">3.1</span>анкер</dt><dd>Устройство, обеспечивающее стабильность проектного положения трубопровода на обводненных участках трассы; <span class="std">СП 33.13330.2012</span></dd><dt id="term-3-2" data-s data-n="3.2"><span class="num">3.2</span>балластировка трубопровода</dt><dd>Установка на трубопроводе устройств, обеспечивающих его проектное положение на обводненных участках трассы;</dd><dt id="term-3-3" data-s data-n="3.3"><span class="num">3.3</span>минимальная толщина стенки</dt><dd>Номинальная минус допуск на толщину стенки трубы;</dd><dt id="term-3-4" data-s data-n="3.4"><span class="num">3.4</span>номинальная толщина стенки трубы</dt><dd>Толщина стенки трубы, полученная из расчета на прочность под внутренним давлением и округленная до ближайшего большего значения, предусмотренного государственными стандартами или техническими условиями;</dd><dt id="term-3-5" data-s data-n="3.5"><span class="num">3.5</span>номинальный диаметр</dt><dd>Приблизительно равен внутреннему диаметру трубопровода, выраженному в миллиметрах и соответствующий ближайшему значению из ряда чисел, принятых в установленном порядке (не имеет единицы измерения), <span class="std">ГОСТ Р 52720</span>;</dd><dt id="term-3-6" data-s data-n="3.6"><span class="num">3.6</span>рабочее давление</dt><dd>Наибольшее избыточное давление в данной точке трубопровода на всех предусмотренных проектом стационарных режимах работы трубопровода;</dd><dt id="term-3-7" data-s data-n="3.7"><span class="num">3.7</span>расчетная толщина стенки трубопровода</dt><dd>Толщина стенки, определяемая из расчета по заданным значениям расчетного давления, наружного диаметра трубы и расчетного сопротивления материала;</dd><dt id="term-3-8" data-s data-n="3.8"><span class="num">3.8</span>соединительные детали</dt><dd>Элементы трубопровода, предназначенные для изменения направления его оси, ответвления от него, изменения его диаметра, толщины стенки и герметизации (отвод, тройник, переход, переходное кольцо, днище (заглушка));</dd><dt id="term-3-9" data-s data-n="3.9"><span class="num">3.9</span>упругий изгиб</dt><dd>Изменение направления оси трубопровода (в вертикальной или горизонтальной плоскостях) без использования отводов.</dd></dl></section>
+<section class="sec" id="sec-4"><h2><span class="num">4</span>Обозначения и сокращения</h2><p class="bp">В настоящем своде правил приняты следующие обозначения и сокращения: bmai , blat ширина накладок соответственно магистральной части и ответвления тройникового соединения; DN номинальный диаметр; de наружный диаметр труб и соединительных деталей; de 1, de 2 наружный диаметр соответственно магистральной части и ответвления тройникового соединения; d вн -внутренний диаметр труб; h высота эллиптической части заглушки; kp коэффициент повышения гибкости гнутых отводов; m l , n l - расчетные изгибающий момент и усилие на единицу длины продольного сечения трубопровода; ms коэффициент интенсификации напряжений; pn рабочее (нормативное) давление транспортируемой среды; q вет -нормативная ветровая нагрузка на единицу длины надземного трубопровода; q лед -нормативная гололедная нагрузка; q сн -нормативная снеговая нагрузка; q ср -нормативная нагрузка от веса транспортируемой среды;</p>
+<p class="bp">Ru, Ry - расчетные сопротивления материала труб и соединительных деталей соответственно по временному сопротивлению и пределу текучести;</p>
+<ul class="cl"><li>Run , Ryn - нормативные сопротивления материала труб и соединительных деталей соответственно по временному сопротивлению и пределу текучести;</li><li>r - радиус кривизны отвода;</li><li>rtee - радиус закругления тройника;</li><li>t - расчетная толщина стенки труб и соединительных деталей;</li><li>t nom - номинальная толщина стенки трубы соединительных деталей;</li><li>t i - толщина изоляционного (теплоизоляционного) покрытия трубопровода;</li><li> c - коэффициент условий работы трубопровода;</li><li> f - коэффициент надежности по нагрузке;</li><li> mu - коэффициент надежности по временному сопротивлению материала труб и соединительных деталей при нормальной температуре (20 °С);</li><li> my - коэффициент надежности по пределу текучести материала труб и соединительных деталей при нормальной температуре (20 °С);</li><li> n - коэффициент надежности по ответственности трубопровода;</li><li> tu - поправочный коэффициент надежности по материалу труб и соединительных деталей при расчетной температуре эксплуатации в расчетах по временному сопротивлению;</li><li> ty - поправочный коэффициент надежности по материалу труб и соединительных деталей при расчетной температуре эксплуатации в расчетах по пределу текучести;</li><li> u - коэффициент надежности для труб и соединительных деталей в расчетах по временному сопротивлению;</li><li> ср - объемный вес транспортируемой среды;</li><li> - коэффициент несущей способности труб и соединительных деталей;</li><li> 1,  2,  b - геометрический параметр соответственно магистральной части, ответвления тройникового соединения и отвода;</li><li>σпр -</li><li>максимальное продольное напряжение от расчетных нагрузок и воздействий;</li><li>н пр σ - максимальное (фибровое) суммарное продольное напряжение;</li><li>σпр N - продольное осевое напряжение от расчетных нагрузок и воздействий;</li><li> 1,  2,  b - параметр внутреннего давления соответственно магистральной части, ответвления тройникового соединения и отвода.</li><li>ГВВ - горизонт высоких вод</li></ul></section>
+<section class="sec" id="sec-5"><h2><span class="num">5</span>Общие положения</h2><div class="clause" id="p-5-1" data-s data-n="5.1"><button class="acopy" data-id="p-5-1" title="Скопировать ссылку на пункт 5.1">⧉</button><span class="cnum"><a href="#p-5-1" title="Пункт 5.1">5.1</a></span><div class="ctext">Для трубопроводов следует применять трубы и соединительные детали, отвечающие требованиям национальных стандартов, что должно быть подтверждено сопроводительным документом (паспортом или сертификатом). При отсутствии указанного документа соответствие труб и соединительных деталей требованиям национальных стандартов должно быть подтверждено испытанием их образцов в объеме, определяемом нормативными документами на соответствующие трубопроводы.</div></div>
+<div class="clause" id="p-5-2" data-s data-n="5.2"><button class="acopy" data-id="p-5-2" title="Скопировать ссылку на пункт 5.2">⧉</button><span class="cnum"><a href="#p-5-2" title="Пункт 5.2">5.2</a></span><div class="ctext">Расчет трубопроводов на прочность и устойчивость должен производиться по методу предельных состояний и включает определение толщин стенок труб, тройников, переходов, отводов и заглушек, проведение поверочного расчета принятого конструктивного решения трубопровода.</div></div>
+<div class="clause" id="p-5-3" data-s data-n="5.3"><button class="acopy" data-id="p-5-3" title="Скопировать ссылку на пункт 5.3">⧉</button><span class="cnum"><a href="#p-5-3" title="Пункт 5.3">5.3</a></span><div class="ctext">Поверочный расчет трубопроводов следует производить на неблагоприятные сочетания нагрузок и воздействий для конкретно принятого конструктивного решения с оценкой прочности и устойчивости продольных и поперечных сечений рассматриваемого трубопровода.</div></div></section>
+<section class="sec" id="sec-6"><h2><span class="num">6</span>Нагрузки и воздействия</h2><div class="clause" id="p-6-1" data-s data-n="6.1"><button class="acopy" data-id="p-6-1" title="Скопировать ссылку на пункт 6.1">⧉</button><span class="cnum"><a href="#p-6-1" title="Пункт 6.1">6.1</a></span><div class="ctext">Расчет трубопроводов на прочность следует выполнять с учетом нагрузок и воздействий, возникающих при их сооружении, испытании и эксплуатации.</div></div>
+<p class="bp">Расчетные нагрузки, воздействия и их возможные сочетания необходимо принимать в соответствии с требованиями <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a>.</p>
+<div class="clause" id="p-6-2" data-s data-n="6.2"><button class="acopy" data-id="p-6-2" title="Скопировать ссылку на пункт 6.2">⧉</button><span class="cnum"><a href="#p-6-2" title="Пункт 6.2">6.2</a></span><div class="ctext">Коэффициенты надежности по нагрузке  f следует принимать по таблице 1.</div></div>
+<div class="clause" id="p-6-3" data-s data-n="6.3"><button class="acopy" data-id="p-6-3" title="Скопировать ссылку на пункт 6.3">⧉</button><span class="cnum"><a href="#p-6-3" title="Пункт 6.3">6.3</a></span><div class="ctext">Нормативные нагрузки от собственного веса трубопровода, арматуры и обустройств изоляции, от веса и давления грунта необходимо принимать в соответствии с требованиями <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a>.</div></div>
+<p class="bp">Таблица 1</p>
+<figure class="tbl"><table><thead><tr><th>Нагрузки и воздействия</th><th>Нагрузки и воздействия</th><th>Способ прокладки трубопровода</th><th>Способ прокладки трубопровода</th><th>Коэффициент надежности</th></tr></thead><tbody><tr><td>Вид</td><td>Характеристика</td><td>подземный</td><td>надземный</td><td>по нагрузке  f</td></tr><tr><td>Постоянные</td><td>Собственный вес трубопровода, арматуры и обустройств</td><td>+</td><td>+</td><td>1,1 (0,95)</td></tr><tr><td></td><td>Вес изоляции</td><td>+</td><td>+</td><td>1,2</td></tr><tr><td></td><td>Вес и давление грунта (засыпки, насыпи)</td><td>+</td><td>-</td><td>1,2 (0,8)</td></tr><tr><td></td><td>Предварительное напряжение трубопровода (упругий изгиб по заданному профилю, предварительная растяжка компенсаторов и др.) давление</td><td>+</td><td>+</td><td>1,0(0,9)</td></tr><tr><td></td><td>Гидростатическое воды</td><td>+</td><td>-</td><td>1,0</td></tr><tr><td>Временные длительные</td><td>Внутреннее давление транспортируемой среды:</td><td></td><td></td><td></td></tr><tr><td></td><td>газообразной</td><td>+</td><td>+</td><td>1,1</td></tr><tr><td></td><td>жидкой</td><td>+</td><td>+</td><td>1,15</td></tr><tr><td></td><td>Вес транспортируемой среды: газообразной</td><td>+</td><td>+</td><td>1,1 (1,0)</td></tr><tr><td></td><td>жидкой</td><td>+</td><td>+</td><td>1,0 (0,95)</td></tr><tr><td></td><td>Температурный перепад металла стенок трубопровода</td><td>+</td><td>+</td><td>1,1</td></tr><tr><td></td><td>Неравномерные деформации грунта, не сопровождающиеся изменением его структуры (осадки, пучения и др.)</td><td>+</td><td>+</td><td>1,5</td></tr></tbody></table></figure>
+<p class="bp">Окончание таблицы 1</p>
+<figure class="tbl"><table><thead><tr><th>Нагрузки и воздействия</th><th>Нагрузки и воздействия</th><th>Способ прокладки трубопровода</th><th>Способ прокладки трубопровода</th><th>Коэффициент надежности</th></tr></thead><tbody><tr><td>Вид</td><td>Характеристика</td><td>подземный</td><td>надземный</td><td>по нагрузке  f</td></tr><tr><td>Кратко- временные</td><td>Снеговая Гололедная Ветровая Транспортирование отдельных секций, сооружение трубопровода, испытание и пропуск очистных устройств</td><td>- - - +</td><td>+ + + +</td><td>1,4 1,3 1,2 1,0</td></tr><tr><td>Особые</td><td>Сейсмические воздействия Нарушение технологического процесса, временные неисправности или поломка оборудования</td><td>+ +</td><td>+ +</td><td>1,0 1,0</td></tr><tr><td></td><td>Неравномерные деформации грунта, сопровождающиеся изменением его структуры (селевые потоки и оползни; деформации земной поверхности в районах горных выработок и карстовых районах; деформации просадочных грунтов при замачивании или вечномерзлых при оттаивании и др.)</td><td>+</td><td>+</td><td>1,0</td></tr></tbody></table></figure>
+<div class="clause" id="p-6-4" data-s data-n="6.4"><button class="acopy" data-id="p-6-4" title="Скопировать ссылку на пункт 6.4">⧉</button><span class="cnum"><a href="#p-6-4" title="Пункт 6.4">6.4</a></span><div class="ctext">Нормативное значение воздействия от предварительного напряжения трубопровода (упругий изгиб по заданному профилю, предварительная растяжка компенсаторов при надземной прокладке и др.) надлежит определять по принятому конструктивному решению трубопровода.</div></div>
+<div class="clause" id="p-6-5" data-s data-n="6.5"><button class="acopy" data-id="p-6-5" title="Скопировать ссылку на пункт 6.5">⧉</button><span class="cnum"><a href="#p-6-5" title="Пункт 6.5">6.5</a></span><div class="ctext">Нормативное значение давления транспортируемой среды устанавливается проектом.</div></div>
+<div class="clause" id="p-6-6" data-s data-n="6.6"><button class="acopy" data-id="p-6-6" title="Скопировать ссылку на пункт 6.6">⧉</button><span class="cnum"><a href="#p-6-6" title="Пункт 6.6">6.6</a></span><div class="ctext">Нормативную нагрузку от веса транспортируемой среды на единицу длины трубопровода следует определять по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="clause" id="p-6-7" data-s data-n="6.7"><button class="acopy" data-id="p-6-7" title="Скопировать ссылку на пункт 6.7">⧉</button><span class="cnum"><a href="#p-6-7" title="Пункт 6.7">6.7</a></span><div class="ctext">Нормативный температурный перепад в трубопроводе принимается равным разнице между максимально или минимально возможной температурой стенок трубопровода в процессе эксплуатации и наименьшей или наибольшей температурой, при которой фиксируется расчетная схема трубопровода.</div></div>
+<div class="clause" id="p-6-8" data-s data-n="6.8"><button class="acopy" data-id="p-6-8" title="Скопировать ссылку на пункт 6.8">⧉</button><span class="cnum"><a href="#p-6-8" title="Пункт 6.8">6.8</a></span><div class="ctext">Нормативную снеговую нагрузку на единицу длины надземного трубопровода надлежит определять по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где Sq вес снегового покрова на 1 м² горизонтальной поверхности земли следует принимать по <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a>.</p>
+<div class="clause" id="p-6-9" data-s data-n="6.9"><button class="acopy" data-id="p-6-9" title="Скопировать ссылку на пункт 6.9">⧉</button><span class="cnum"><a href="#p-6-9" title="Пункт 6.9">6.9</a></span><div class="ctext">Нормативную нагрузку от обледенения на единицу длины надземного трубопровода следует определять: при наружном диаметре трубопровода ( de + 2 t i ) ≤ 70 мм включительно по <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a> как нормативное значение линейной гололедной нагрузки; при d e + 2 t i &amp;gt; 70 мм по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где i&#x27; - нормативное значение поверхностной гололедной нагрузки, определяемое по <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a>.</p>
+<div class="clause" id="p-6-10" data-s data-n="6.10"><button class="acopy" data-id="p-6-10" title="Скопировать ссылку на пункт 6.10">⧉</button><span class="cnum"><a href="#p-6-10" title="Пункт 6.10">6.10</a></span><div class="ctext">Нормативную ветровую нагрузку на единицу длины надземного трубопровода wn , действующую перпендикулярно его осевой вертикальной плоскости, следует определять по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где статическую wstc и динамическую wdyn составляющие ветровой нагрузки следует определять по <a class="std" href="sp-20-13330-2016.html">СП 20.13330</a>, при этом значение wdyn необходимо определять как для сооружения с равномерно распределенной массой и постоянной жесткостью.</p>
+<div class="clause" id="p-6-11" data-s data-n="6.11"><button class="acopy" data-id="p-6-11" title="Скопировать ссылку на пункт 6.11">⧉</button><span class="cnum"><a href="#p-6-11" title="Пункт 6.11">6.11</a></span><div class="ctext">Нормативные значения нагрузок и воздействий, возникающих при транспортировании отдельных секций, при сооружении трубопровода, испытании и пропуске очистных устройств, следует устанавливать проектом в зависимости от способов производства этих работ и проведения испытаний.</div></div>
+<div class="clause" id="p-6-12" data-s data-n="6.12"><button class="acopy" data-id="p-6-12" title="Скопировать ссылку на пункт 6.12">⧉</button><span class="cnum"><a href="#p-6-12" title="Пункт 6.12">6.12</a></span><div class="ctext">Сейсмические воздействия на надземные и подземные трубопроводы надлежит принимать согласно <a class="std" href="sp-14-13330-2018.html">СП 14.13330</a>.</div></div>
+<div class="clause" id="p-6-13" data-s data-n="6.13"><button class="acopy" data-id="p-6-13" title="Скопировать ссылку на пункт 6.13">⧉</button><span class="cnum"><a href="#p-6-13" title="Пункт 6.13">6.13</a></span><div class="ctext">Нагрузки и воздействия, вызываемые резким нарушением процесса эксплуатации, временной неисправностью и поломкой оборудования, следует устанавливать проектом в зависимости от особенностей технологического режима эксплуатации.</div></div>
+<div class="clause" id="p-6-14" data-s data-n="6.14"><button class="acopy" data-id="p-6-14" title="Скопировать ссылку на пункт 6.14">⧉</button><span class="cnum"><a href="#p-6-14" title="Пункт 6.14">6.14</a></span><div class="ctext">Нагрузки и воздействия от неравномерных деформаций грунта (осадок, пучения, селевых потоков, оползней, воздействий горных выработок, карстов, замачивания просадочных грунтов, оттаивания вечномерзлых грунтов и т. д.) надлежит определять на основании анализа грунтовых условий и их возможного изменения в процессе строительства и эксплуатации трубопроводов.</div></div>
+<div class="clause" id="p-6-15" data-s data-n="6.15"><button class="acopy" data-id="p-6-15" title="Скопировать ссылку на пункт 6.15">⧉</button><span class="cnum"><a href="#p-6-15" title="Пункт 6.15">6.15</a></span><div class="ctext">Нормативные нагрузки и коэффициенты надежности по нагрузке от подвижного состава железных и автомобильных дорог следует определять согласно <span class="std">СП 35.13330</span>.</div></div></section>
+<section class="sec" id="sec-7"><h2><span class="num">7</span>Расчетные характеристики материалов труб и соединительных деталей</h2><div class="clause" id="p-7-1" data-s data-n="7.1"><button class="acopy" data-id="p-7-1" title="Скопировать ссылку на пункт 7.1">⧉</button><span class="cnum"><a href="#p-7-1" title="Пункт 7.1">7.1</a></span><div class="ctext">Расчетные сопротивления материала труб и соединительных деталей по временному сопротивлению Ru , пределу текучести Ry при расчетной температуре следует определять по формулам:</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="clause" id="p-7-2" data-s data-n="7.2"><button class="acopy" data-id="p-7-2" title="Скопировать ссылку на пункт 7.2">⧉</button><span class="cnum"><a href="#p-7-2" title="Пункт 7.2">7.2</a></span><div class="ctext">Нормативные сопротивления Run и Ryn следует принимать равными минимальным значениям соответственно временного сопротивления и предела текучести материала труб и соединительных деталей по государственным стандартам или техническим условиям на трубы и соединительные детали, определяемым при нормальной температуре.</div></div>
+<div class="clause" id="p-7-3" data-s data-n="7.3"><button class="acopy" data-id="p-7-3" title="Скопировать ссылку на пункт 7.3">⧉</button><span class="cnum"><a href="#p-7-3" title="Пункт 7.3">7.3</a></span><div class="ctext">Значения коэффициентов надежности по материалу  mu и  my труб и соединительных деталей надлежит принимать по таблицам 2 и 3.</div></div>
+<div class="clause" id="p-7-4" data-s data-n="7.4"><button class="acopy" data-id="p-7-4" title="Скопировать ссылку на пункт 7.4">⧉</button><span class="cnum"><a href="#p-7-4" title="Пункт 7.4">7.4</a></span><div class="ctext">Значения поправочных коэффициентов надежности по материалу труб и соединительных деталей  tu и  ty при расчетной температуре эксплуатации трубопровода следует принимать по таблице 4.</div></div>
+<div class="clause" id="p-7-5" data-s data-n="7.5"><button class="acopy" data-id="p-7-5" title="Скопировать ссылку на пункт 7.5">⧉</button><span class="cnum"><a href="#p-7-5" title="Пункт 7.5">7.5</a></span><div class="ctext">Значения коэффициента надежности по ответственности  n трубопровода следует принимать по таблице 5.</div></div>
+<div class="clause" id="p-7-6" data-s data-n="7.6"><button class="acopy" data-id="p-7-6" title="Скопировать ссылку на пункт 7.6">⧉</button><span class="cnum"><a href="#p-7-6" title="Пункт 7.6">7.6</a></span><div class="ctext">Значения коэффициента условий работы  c трубопровода необходимо принимать по таблице 6.</div></div>
+<p class="bp">Таблица 2</p>
+<figure class="tbl"><table><thead><tr><th>Характеристика труб и соединительных деталей</th><th>Коэффициент надежности по материалу  mu</th></tr></thead><tbody><tr><td>Сварные из малоперлитной и бейнитной стали контролируемой прокатки и термически упрочненные трубы, изготовленные двусторонней электродуговой сваркой под флюсом по сплошному технологическому шву, с минусовым допуском по толщине стенки не более5%ипрошедшие100 %-ный контроль на сплошность основного</td><td>1,34</td></tr><tr><td>металла и сварных соединений неразрушающими методами Сварные из нормализованной, термически упрочненной стали и стали контролируемой прокатки, изготовленные двусторонней электродуговой сваркой под флюсомпосплошномутехнологическому шву и прошедшие 100 %-ный контроль сварных соединений</td><td>1,40</td></tr><tr><td>неразрушающими методами Сварные из нормализованной и горячекатаной низколегированной или углеродистой стали, изготовленные двусторонней электродуговой сваркой и прошедшие 100 %-ный контроль сварных соединений неразрушающими методами; бесшовные холодно- и теплодеформированные</td><td>1,47</td></tr><tr><td>Сварные из горячекатаной низколегированной или углеродистой стали, изготовленные двусторонней электродуговой сваркой или токами высокой частоты; штампованные и штампосварные соединительные детали; остальные бесшовные трубы и соединительные детали</td><td>1,55</td></tr></tbody></table></figure>
+<p class="bp">Примечание - Допускается применять коэффициенты 1,34 вместо 1,40, 1,40 вместо 1,47 и 1,47 вместо 1,55 для труб, изготовленных двусторонней сваркой под флюсом или электросваркой токами высокой частоты, со стенкой толщиной не более 12 мм при использовании специальной технологии производства, позволяющей получать качество труб, соответствующее данному коэффициенту  mu .</p>
+<figure class="tbl"><table><thead><tr><th>Характеристика труб и соединительных деталей</th><th>Коэффициент надежности по материалу  my</th></tr></thead><tbody><tr><td>Бесшовные из малоуглеродистых сталей</td><td>1,10</td></tr><tr><td>Сварные из стали с отношением 0,8 /  un yn R R</td><td>1,15</td></tr><tr><td>Сварные из стали с отношением 0,8 /  un yn R R</td><td>1,20</td></tr></tbody></table></figure>
+<h4 class="subhead">Таблица 4</h4>
+<figure class="tbl"><table><thead><tr><th>Трубы и соединительные сталей</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th><th>Поправочные коэффициенты надежности по материалу по временному сопротивлению  tu и по пределу текучести  ty при температуре эксплуатации трубопровода,  С</th></tr></thead><tbody><tr><td>детали из</td><td>минус 70</td><td>минус 40 - плюс 20</td><td>100</td><td>200</td><td>300</td><td>400</td><td>450</td></tr><tr><td>Углеродистых:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td> tu</td><td>-</td><td>1,0</td><td>1,0</td><td>1,0</td><td>1,0</td><td>-</td><td>-</td></tr><tr><td> ty</td><td>-</td><td>1,0</td><td>1,05</td><td>1,15</td><td>1,40</td><td>-</td><td>-</td></tr><tr><td>Низколегированных:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td> tu</td><td>1,0</td><td>1,0</td><td>1,05</td><td>1,05</td><td>1,10</td><td>1,40</td><td>1,90</td></tr><tr><td> ty</td><td>1,0</td><td>1,0</td><td>1,10</td><td>1,15</td><td>1,25</td><td>1,60</td><td>2,20</td></tr><tr><td>Легированных:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td> tu</td><td>1,0</td><td>1,0</td><td>1,05</td><td>1,15</td><td>1,25</td><td>1,35</td><td>1,45</td></tr><tr><td> ty</td><td>1,0</td><td>1,0</td><td>1,05</td><td>1,15</td><td>1,25</td><td>1,35</td><td>1,45</td></tr></tbody></table></figure>
+<h4 class="subhead">Примечания</h4>
+<ul class="cl"><li>1 Для промежуточных значений расчетных температур величины  tu и  ty следует определять линейной интерполяцией двух ближайших значений, приведенных в таблице 4.</li><li>2 Знак «-» означает, что при таких температурах эксплуатации трубопровода углеродистые стали не применяются.</li></ul>
+<h4 class="subhead">Таблица 5</h4>
+<figure class="tbl"><table><thead><tr><th>Транспортируемая среда и номинальный диаметр трубопровода ( D N )</th><th>Коэффициент надежности по ответственности  n трубопровода при нормативном давлении транспортируемой среды, МПа</th><th>Коэффициент надежности по ответственности  n трубопровода при нормативном давлении транспортируемой среды, МПа</th><th>Коэффициент надежности по ответственности  n трубопровода при нормативном давлении транспортируемой среды, МПа</th></tr></thead><tbody><tr><td></td><td>0 &lt; р n ≤ 2,5</td><td>2,5 &lt; р n ≤ 6,3</td><td>6,3 &lt; р n ≤ 10</td></tr><tr><td>Горючие газы, D N  DN 500; трудногорючие и негорючие (инертные) газы, D N  DN 1000; легковоспламеняющиеся и горючие жидкости, D N  DN 1000; трудногорючие и негорючие</td><td>1,0</td><td>1,0</td><td>1,0</td></tr><tr><td>Горючие газы, DN 500  D N  DN 1000; трудногорючие и негорючие (инертные) газы, D N = DN 1200; легковоспламеняющиеся и горючие жидкости, D N = DN 1200; трудно-горючие и</td><td>1,0</td><td>1,0</td><td>1,05</td></tr><tr><td>негорючие жидкости, D N = DN 1400 Горючие газы, D N = DN 1200; трудногорючие и негорючие (инертные) газы, D N = DN 1400; легковоспламеняющиеся и горючие жидкости, D N = DN 1400</td><td>1,0</td><td>1,05</td><td>1,10</td></tr><tr><td>Горючие газы, D N = DN 1400</td><td>1,05</td><td>1,10</td><td>1,15</td></tr></tbody></table></figure>
+<h4 class="subhead">Таблица 6</h4>
+<figure class="tbl"><table><thead><tr><th>Характеристика транспортируемой среды</th><th>Коэффициент условий работы трубопровода  с</th></tr></thead><tbody><tr><td>Вредные (классов опасности 1 и 2), горючие газы, в том числе сжиженные</td><td>0,55</td></tr><tr><td>Легковоспламеняющиеся и горючие жидкости; вредные (класса опасности 3) и трудногорючие и негорючие (инертные) газы</td><td>0,70</td></tr><tr><td>Трудногорючие и негорючие жидкости</td><td>0,85</td></tr></tbody></table></figure>
+<p class="bp">Примечание - Класс опасности вредных веществ следует определять по <span class="std">ГОСТ 12.1.007</span>.</p>
+<div class="clause" id="p-7-7" data-s data-n="7.7"><button class="acopy" data-id="p-7-7" title="Скопировать ссылку на пункт 7.7">⧉</button><span class="cnum"><a href="#p-7-7" title="Пункт 7.7">7.7</a></span><div class="ctext">Расчетные сопротивления сварных швов, соединяющих между собой трубы и соединительные детали, выполненных любым видом сварки и прошедших контроль качества неразрушающими методами, следует принимать равными меньшим значениям соответствующих расчетных сопротивлений соединяемых элементов.</div></div>
+<p class="bp">При отсутствии этого контроля расчетные сопротивления сварных швов, соединяющих между собой трубы и соединительные детали, следует принимать с понижающим коэффициентом 0,85.</p></section>
+<section class="sec" id="sec-8"><h2><span class="num">8</span>Определение толщин стенок труб и соединительных деталей</h2><div class="clause" id="p-8-1" data-s data-n="8.1"><button class="acopy" data-id="p-8-1" title="Скопировать ссылку на пункт 8.1">⧉</button><span class="cnum"><a href="#p-8-1" title="Пункт 8.1">8.1</a></span><div class="ctext">Расчетные толщины стенок труб и соединительных деталей t следует определять по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где   y u R R R ; min = .</p>
+<p class="bp">Толщина стенки труб и соединительных деталей, определенная по формуле (7), должна приниматься не менее 1/100 dе , но не менее 3 мм для труб и соединительных деталей номинальным диаметром DN 200 и менее, и не менее 4 мм - номинальным диаметром свыше DN 200.</p>
+<div class="clause" id="p-8-2" data-s data-n="8.2"><button class="acopy" data-id="p-8-2" title="Скопировать ссылку на пункт 8.2">⧉</button><span class="cnum"><a href="#p-8-2" title="Пункт 8.2">8.2</a></span><div class="ctext">Трубопроводы с толщиной стенки, определенной согласно настоящему своду правил, не допускается применять для транспортирования сред, оказывающих коррозионное воздействие на металл и сварные соединения труб, если в проекте не предусмотрены решения по защите их от коррозии (антикоррозионные покрытия, ингибиторы и пр.).</div></div>
+<p class="bp">Увеличение толщины стенки трубопроводов (соединительных деталей) с целью защиты их от коррозии, а также трубопроводов, находящихся в особых условиях строительства или эксплуатации (например, при прокладке трубопроводов в сейсмических районах или особенностях технологии сварки, производства строительномонтажных работ или значительных температурных перепадах в трубопроводе и др.), допускается только при условии, если это увеличение предусмотрено соответствующими нормативными документами, утвержденными или согласованными в установленном порядке.</p>
+<div class="clause" id="p-8-3" data-s data-n="8.3"><button class="acopy" data-id="p-8-3" title="Скопировать ссылку на пункт 8.3">⧉</button><span class="cnum"><a href="#p-8-3" title="Пункт 8.3">8.3</a></span><div class="ctext">Значения коэффициента несущей способности труб и соединительных деталей, конструктивные решения которых приведены в приложении <a href="#pril-a">А</a>, надлежит принимать: для труб, заглушек и переходов  = 1; для тройниковых соединений и отводов - по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где ξ = de 2 / de 1 - для тройниковых соединений; ξ = r / de - для отводов.</p>
+<p class="bp">Значения коэффициентов а и b в формуле (8) следует принимать: для тройниковых соединений - по таблице 7; для отводов - по таблице 8.</p>
+<p class="bp">Таблица 7</p>
+<figure class="tbl"><table><thead><tr><th></th><th>Тройниковые соединения [см. формулу (8)]</th><th>Тройниковые соединения [см. формулу (8)]</th><th>Тройниковые соединения [см. формулу (8)]</th><th>Тройниковые соединения [см. формулу (8)]</th><th>Тройниковые соединения [см. формулу (8)]</th><th>Тройниковые соединения [см. формулу (8)]</th></tr></thead><tbody><tr><td>ξ = d e 2 / d e 1</td><td>сварные без усиливающих элементов</td><td>сварные без усиливающих элементов</td><td>сварные, усиленные накладками</td><td>сварные, усиленные накладками</td><td>бесшовные и штампосварные</td><td>бесшовные и штампосварные</td></tr><tr><td></td><td>а</td><td>b</td><td>а</td><td>b</td><td>a</td><td>b</td></tr><tr><td>От 0,00 до 0,15 вкл.</td><td>0,00</td><td>1,00</td><td>0,00</td><td>1,00</td><td>0,22</td><td>1,00</td></tr><tr><td>Св. 0,15 » 0,50 »</td><td>1,60</td><td>0,76</td><td>0,00</td><td>1,00</td><td>0,62</td><td>0,94</td></tr><tr><td>» 0,50 » 1,00 »</td><td>0,10</td><td>1,51</td><td>0,46</td><td>0,77</td><td>0,40</td><td>1,05</td></tr></tbody></table></figure>
+<div class="clause" id="p-8-4" data-s data-n="8.4"><button class="acopy" data-id="p-8-4" title="Скопировать ссылку на пункт 8.4">⧉</button><span class="cnum"><a href="#p-8-4" title="Пункт 8.4">8.4</a></span><div class="ctext">Для подземных трубопроводов, имеющих отношение t / de  0,015 или укладываемых на глубину более 3 м или менее 0,8 м, следует соблюдать условие</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">Значения nl и ml (расчетное усилие и изгибающий момент в продольном сечении трубы единичной длины) необходимо определять с учетом отпора грунта от совместного воздействия давления грунта, нагрузок над трубой от подвижного состава железнодорожного и автомобильного транспорта, возможного вакуума и гидростатического давления грунтовых вод.</p>
+<p class="bp">Таблица 8</p>
+<figure class="tbl"><table><thead><tr><th>ξ = r / d e</th><th>Отводы [см. формулу (8)]</th><th>Отводы [см. формулу (8)]</th></tr></thead><tbody><tr><td>ξ = r / d e</td><td>а</td><td>b</td></tr><tr><td>От 1,0 до 2,0</td><td>-0,3</td><td>1,6</td></tr><tr><td>Более 2,0</td><td>0,0</td><td>1,0</td></tr></tbody></table></figure></section>
+<section class="sec" id="sec-9"><h2><span class="num">9</span>Проверка прочности и устойчивости трубопроводов</h2><div class="clause" id="p-9-1" data-s data-n="9.1"><button class="acopy" data-id="p-9-1" title="Скопировать ссылку на пункт 9.1">⧉</button><span class="cnum"><a href="#p-9-1" title="Пункт 9.1">9.1</a></span><div class="ctext">Поверочный расчет трубопровода на прочность и устойчивость производится после выбора его основных размеров с учетом всех расчетных нагрузок и воздействий для всех расчетных случаев.</div></div>
+<div class="clause" id="p-9-2" data-s data-n="9.2"><button class="acopy" data-id="p-9-2" title="Скопировать ссылку на пункт 9.2">⧉</button><span class="cnum"><a href="#p-9-2" title="Пункт 9.2">9.2</a></span><div class="ctext">Определение усилий от расчетных нагрузок и воздействий, возникающих в отдельных элементах трубопроводов, необходимо производить методами строительной механики расчета статически неопределимых стержневых систем.</div></div>
+<div class="clause" id="p-9-3" data-s data-n="9.3"><button class="acopy" data-id="p-9-3" title="Скопировать ссылку на пункт 9.3">⧉</button><span class="cnum"><a href="#p-9-3" title="Пункт 9.3">9.3</a></span><div class="ctext">Расчетная схема трубопровода должна отражать действительные условия его работы.</div></div>
+<div class="clause" id="p-9-4" data-s data-n="9.4"><button class="acopy" data-id="p-9-4" title="Скопировать ссылку на пункт 9.4">⧉</button><span class="cnum"><a href="#p-9-4" title="Пункт 9.4">9.4</a></span><div class="ctext">В качестве расчетной схемы трубопровода следует рассматривать статически неопределимые плоские или пространственные, простые или разветвленные стержневые системы переменной жесткости с учетом взаимодействия трубопровода с опорными устройствами и окружающей средой (при прокладке непосредственно в грунт). При этом коэффициенты повышения гибкости отводов и тройниковых соединений определяются согласно 9.5 и 9.6, коэффициенты интенсификации напряжений - согласно 9.7.</div></div>
+<div class="clause" id="p-9-5" data-s data-n="9.5"><button class="acopy" data-id="p-9-5" title="Скопировать ссылку на пункт 9.5">⧉</button><span class="cnum"><a href="#p-9-5" title="Пункт 9.5">9.5</a></span><div class="ctext">Значение коэффициента повышения гибкости гнутых и сварных отводов kр надлежит определять по таблице 9.</div></div>
+<p class="bp">Величина kр * принимается по графику на рисунке 1 в зависимости от геометрического параметра отвода  b и параметра внутреннего давления  b.</p>
+<p class="bp">Значения параметров  b и  b следует определять по формулам:</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">Таблица 9</p>
+<figure class="tbl"><table><thead><tr><th>Центральный угол отвода  , град</th><th>Коэффициент повышения гибкости отвода k р</th></tr></thead><tbody><tr><td>От 0 до 45 включ.</td><td>1 45 1) ( * +  - р k</td></tr><tr><td>Св. 45 » 90 »</td><td>k р </td></tr></tbody></table></figure>
+<div class="clause" id="p-9-6" data-s data-n="9.6"><button class="acopy" data-id="p-9-6" title="Скопировать ссылку на пункт 9.6">⧉</button><span class="cnum"><a href="#p-9-6" title="Пункт 9.6">9.6</a></span><div class="ctext">Коэффициент гибкости тройниковых соединений необходимо принимать равным единице.</div></div>
+<div class="clause" id="p-9-7" data-s data-n="9.7"><button class="acopy" data-id="p-9-7" title="Скопировать ссылку на пункт 9.7">⧉</button><span class="cnum"><a href="#p-9-7" title="Пункт 9.7">9.7</a></span><div class="ctext">Значения коэффициентов интенсификации напряжений следует принимать:</div></div>
+<ul class="cl"><li>для прямой трубы ms= 1; для отводов ms = ms  .</li></ul>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-1.jpg" loading="lazy" alt="Рисунок 1 из оригинального издания СП 33.13330.2012"></figure>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">Значение * p m принимается по графику на рисунке 2 в зависимости от параметров  b и  b, определяемых формулами (10) и (11); для тройникового соединения:</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">ответвления</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">Рисунок 2 - График для определения значений коэффициента * s m</p>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-2.jpg" loading="lazy" alt="Рисунок 2 из оригинального издания СП 33.13330.2012"></figure>
+<p class="bp">Значения * s m принимаются по графику на рисунке 2 в зависимости от параметров тройникового соединения, определяемых по формулам:</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">Примечание - При определении значений параметров магистральной части тройникового соединения  1 и  1 используются первые индексы, ответвления тройникового соединения  2 и  2 - вторые индексы.</p>
+<div class="clause" id="p-9-8" data-s data-n="9.8"><button class="acopy" data-id="p-9-8" title="Скопировать ссылку на пункт 9.8">⧉</button><span class="cnum"><a href="#p-9-8" title="Пункт 9.8">9.8</a></span><div class="ctext">Арматуру, расположенную на трубопроводе (краны, задвижки, обратные клапаны и т.д.), следует рассматривать в расчетной схеме как твердое недеформируемое тело.</div></div>
+<h4 class="subhead">Проверка прочности и устойчивости подземных и наземных (в насыпи) трубопроводов</h4>
+<div class="clause" id="p-9-9" data-s data-n="9.9"><button class="acopy" data-id="p-9-9" title="Скопировать ссылку на пункт 9.9">⧉</button><span class="cnum"><a href="#p-9-9" title="Пункт 9.9">9.9</a></span><div class="ctext">Подземные и наземные (в насыпи) трубопроводы следует проверять на прочность, деформативность и общую устойчивость в продольном направлении и против всплытия.</div></div>
+<div class="clause" id="p-9-10" data-s data-n="9.10"><button class="acopy" data-id="p-9-10" title="Скопировать ссылку на пункт 9.10">⧉</button><span class="cnum"><a href="#p-9-10" title="Пункт 9.10">9.10</a></span><div class="ctext">Проверку на прочность подземных и наземных (в насыпи) трубопроводов в продольном направлении следует производить из условия</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где  1 - коэффициент, учитывающий двухосное напряженное состояние металла труб, при растягивающих осевых продольных напряжениях (  пр .N  0) принимаемый равным единице, при сжимающих (  пр .N &amp;lt; 0) определяемый по формуле</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="clause" id="p-9-11" data-s data-n="9.11"><button class="acopy" data-id="p-9-11" title="Скопировать ссылку на пункт 9.11">⧉</button><span class="cnum"><a href="#p-9-11" title="Пункт 9.11">9.11</a></span><div class="ctext">Продольные осевые напряжения  пр .N определяются от расчетных нагрузок и воздействий с учетом упругопластической работы металла. Расчетная схема должна отражать условия работы трубопровода и взаимодействие его с грунтом.</div></div>
+<div class="clause" id="p-9-12" data-s data-n="9.12"><button class="acopy" data-id="p-9-12" title="Скопировать ссылку на пункт 9.12">⧉</button><span class="cnum"><a href="#p-9-12" title="Пункт 9.12">9.12</a></span><div class="ctext">Для предотвращения недопустимых пластических деформаций подземных и наземных (в насыпи) трубопроводов проверку необходимо производить по условию</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где  2 - коэффициент, учитывающий двухосное напряженное состояние металла труб; при растягивающих продольных напряжениях ( 0 σ н пр  ) принимаемый равным единице, при сжимающих ( 0 σ н пр  ) - определяемый по формуле</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="clause" id="p-9-13" data-s data-n="9.13"><button class="acopy" data-id="p-9-13" title="Скопировать ссылку на пункт 9.13">⧉</button><span class="cnum"><a href="#p-9-13" title="Пункт 9.13">9.13</a></span><div class="ctext">Максимальные (фибровые) суммарные продольные напряжения н пр σ определяются от всех (с учетом их сочетания) нормативных нагрузок и воздействий с учетом поперечных и продольных перемещений трубопровода. При определении жесткости и напряженного состояния отвода следует учитывать условия его сопряжения с трубой и влияние внутреннего давления.</div></div>
+<div class="clause" id="p-9-14" data-s data-n="9.14"><button class="acopy" data-id="p-9-14" title="Скопировать ссылку на пункт 9.14">⧉</button><span class="cnum"><a href="#p-9-14" title="Пункт 9.14">9.14</a></span><div class="ctext">Проверку общей устойчивости трубопровода в продольном направлении в плоскости наименьшей жесткости системы следует производить из условия</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<div class="clause" id="p-9-15" data-s data-n="9.15"><button class="acopy" data-id="p-9-15" title="Скопировать ссылку на пункт 9.15">⧉</button><span class="cnum"><a href="#p-9-15" title="Пункт 9.15">9.15</a></span><div class="ctext">Эквивалентное продольное осевое усилие в сечении трубопровода S следует определять от расчетных нагрузок и воздействий с учетом продольных и поперечных перемещений трубопровода.</div></div>
+<p class="bp">Продольное критическое усилие N кр, при котором наступает потеря продольной устойчивости трубопровода. N кр следует определять с учетом принятого конструктивного решения и начального искривления трубопровода в зависимости от глубины его заложения, физико-механических характеристик грунта, наличия балласта, закрепляющих устройств с учетом их податливости. На обводненных участках следует учитывать гидростатическое воздействие воды.</p>
+<p class="bp">Продольную устойчивость следует проверять для криволинейных участков в плоскости изгиба трубопровода. Продольную устойчивость на прямолинейных подземных участках следует проверять в вертикальной плоскости с радиусом начальной кривизны 5000 м.</p>
+<div class="clause" id="p-9-16" data-s data-n="9.16"><button class="acopy" data-id="p-9-16" title="Скопировать ссылку на пункт 9.16">⧉</button><span class="cnum"><a href="#p-9-16" title="Пункт 9.16">9.16</a></span><div class="ctext">Устойчивость положения (балластировка) трубопроводов, прокладываемых на обводненных участках трассы, следует проверять для отдельных (в зависимости от условий строительства) участков по условию</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где Q акт - суммарная расчетная нагрузка на трубопровод, действующая вверх, включая упругий отпор при прокладке свободным изгибом;</p>
+<p class="bp">Q пас -суммарная расчетная нагрузка, действующая вниз (включая массу -собственный вес);</p>
+<p class="bp">Коэффициент надежности устойчивости положения трубопровода против всплытия, k н.в - принимается равным для участков перехода: через болота, поймы, водоемы при отсутствия течения, обводненные и заливаемые участки в пределах ГВВ 1  обеспеченности - 1,05 русловых через реки шириной до 200 м по среднему меженному уровню, включая прибрежные участки в границах производства подводно-технических работ - 1,10 через реки и водохранилища шириной свыше 200 м, а также горные реки - 1,15 нефтепроводов и нефтепродуктопроводов, для которых возможно их опорожнение и замещение продукта воздухом - 1,03</p>
+<div class="clause" id="p-9-17" data-s data-n="9.17"><button class="acopy" data-id="p-9-17" title="Скопировать ссылку на пункт 9.17">⧉</button><span class="cnum"><a href="#p-9-17" title="Пункт 9.17">9.17</a></span><div class="ctext">Вес засыпки трубопроводов на русловых участках переходов через реки и водохранилища не учитывается. При расчете на устойчивость положения нефтепровода и нефтепродуктопроводов, прокладываемых на обводненных участках, удерживающая способность грунта учитывается.</div></div>
+<div class="clause" id="p-9-18" data-s data-n="9.18"><button class="acopy" data-id="p-9-18" title="Скопировать ссылку на пункт 9.18">⧉</button><span class="cnum"><a href="#p-9-18" title="Пункт 9.18">9.18</a></span><div class="ctext">Расчетная несущая способность анкерного устройства Б анк определяется по формуле</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<ul class="cl"><li>количество анкеров в одном анкерном устройстве; где z m анк - коэффициент условий работы анкерного устройства, принимаемый равным 1,0 при z = 1 или при z  2 и dн / d анк  3; а при z  2 и 1  dн / d анк  3</li></ul>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">P анк - расчетная несущая способность анкера из условия несущей способности грунта основания, определяемая из условия</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">d анк - максимальный линейный размер габарита проекции одного анкера на горизонтальную плоскость;</p>
+<p class="bp">Ф анк - несущая способность анкера, определяемая расчетом или по результатам полевых испытаний согласно <a class="std" href="sp-24-13330-2021.html">СП 24.13330</a>; kа - коэффициент надежности анкера, принимаемый равным 1,4 (если несущая способность анкера определена расчетом) или 1,25 (если несущая способность анкера определена по результатам полевых испытаний статической нагрузкой).</p>
+<h4 class="subhead">Проверка прочности и устойчивости надземных трубопроводов</h4>
+<div class="clause" id="p-9-19" data-s data-n="9.19"><button class="acopy" data-id="p-9-19" title="Скопировать ссылку на пункт 9.19">⧉</button><span class="cnum"><a href="#p-9-19" title="Пункт 9.19">9.19</a></span><div class="ctext">Надземные (открытые) трубопроводы следует проверять на прочность, продольную устойчивость и выносливость (колебания в ветровом потоке).</div></div>
+<div class="clause" id="p-9-20" data-s data-n="9.20"><button class="acopy" data-id="p-9-20" title="Скопировать ссылку на пункт 9.20">⧉</button><span class="cnum"><a href="#p-9-20" title="Пункт 9.20">9.20</a></span><div class="ctext">Проверку на прочность надземных трубопроводов следует производить из условия</div></div>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">где  3 - коэффициент, учитывающий двухосное напряженное состояние металла труб; при растягивающих продольных напряжениях (  пр  0) принимаемый равным единице, при сжимающих (  пр &amp;lt; 0) - определяемый по формуле (с учетом примечаний 1, 2)</p>
+<div class="img-missing">Формула из оригинального документа не распознана при конвертации. Сверьтесь с <a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>
+<p class="bp">При расчете на усталость (динамическое воздействие ветра) величина Ry понижается умножением на коэффициент, определяемый согласно <a class="std" href="sp-16-13330-2017.html">СП 16.13330</a>.</p>
+<p class="bp">Примечания</p>
+<p class="bp">1 Если расчетное сопротивление Ry &amp;gt; Ru , то в формуле (25) вместо Ry следует принимать Ru.</p>
+<ul class="cl"><li>2 Для надземных бескомпенсаторных переходов при числе пролетов не более четырех допускается при расчете по формуле (25) вместо  3 принимать  2, определяемое по формуле (19).</li></ul>
+<div class="clause" id="p-9-21" data-s data-n="9.21"><button class="acopy" data-id="p-9-21" title="Скопировать ссылку на пункт 9.21">⧉</button><span class="cnum"><a href="#p-9-21" title="Пункт 9.21">9.21</a></span><div class="ctext">Максимальные фибровые суммарные продольные напряжения от расчетных нагрузок и воздействий в балочных, шпренгельных, висячих и арочных надземных трубопроводах следует определять, рассматривая трубопровод как стержневую систему.</div></div>
+<p class="bp">При наличии изгибающих моментов в вертикальной и горизонтальной плоскостях расчет следует производить по их равнодействующей. В расчетах необходимо учитывать геометрическую нелинейность системы.</p>
+<div class="clause" id="p-9-22" data-s data-n="9.22"><button class="acopy" data-id="p-9-22" title="Скопировать ссылку на пункт 9.22">⧉</button><span class="cnum"><a href="#p-9-22" title="Пункт 9.22">9.22</a></span><div class="ctext">При определении продольных усилий и изгибающих моментов в надземных трубопроводах следует учитывать изменения расчетной схемы в зависимости от метода монтажа трубопровода. Изгибающие моменты в бескомпенсаторных переходах трубопроводов необходимо определять с учетом продольно-поперечного изгиба. Расчет надземных трубопроводов должен производиться с учетом перемещений трубопровода на примыкающих подземных участках трубопроводов.</div></div>
+<div class="clause" id="p-9-23" data-s data-n="9.23"><button class="acopy" data-id="p-9-23" title="Скопировать ссылку на пункт 9.23">⧉</button><span class="cnum"><a href="#p-9-23" title="Пункт 9.23">9.23</a></span><div class="ctext">Балочные системы надземных трубопроводов должны рассчитываться с учетом трения на опорах, при этом принимается меньшее или большее из возможных значений коэффициента трения в зависимости от того, что опаснее для данного расчетного случая.</div></div>
+<div class="clause" id="p-9-24" data-s data-n="9.24"><button class="acopy" data-id="p-9-24" title="Скопировать ссылку на пункт 9.24">⧉</button><span class="cnum"><a href="#p-9-24" title="Пункт 9.24">9.24</a></span><div class="ctext">Трубопроводы балочных, шпренгельных, арочных и висячих систем с воспринимаемым трубопроводом распором должны быть рассчитаны на продольную устойчивость в плоскости наименьшей жесткости системы.</div></div>
+<p class="bp">Оценка устойчивости трубопровода в продольном направлении должна выполняться по условию (21), где продольное критическое усилие N кр должно определяться с учетом принятого конструктивного решения и в зависимости от условий взаимодействия трубопровода с опорами (трение на опорах, податливость опор и др.).</p>
+<div class="clause" id="p-9-25" data-s data-n="9.25"><button class="acopy" data-id="p-9-25" title="Скопировать ссылку на пункт 9.25">⧉</button><span class="cnum"><a href="#p-9-25" title="Пункт 9.25">9.25</a></span><div class="ctext">При скоростях ветра, вызывающих колебание трубопровода с частотой, равной частоте собственных колебаний, необходимо производить поверочный расчет трубопроводов на резонанс.</div></div>
+<p class="bp">Расчетные усилия и перемещения трубопровода при резонансе следует определять как геометрическую сумму резонансных усилий и перемещений, а также усилий и перемещений от других видов нагрузок и воздействий, включая расчетную ветровую нагрузку, соответствующую критическому скоростному напору.</p>
+<div class="clause" id="p-9-26" data-s data-n="9.26"><button class="acopy" data-id="p-9-26" title="Скопировать ссылку на пункт 9.26">⧉</button><span class="cnum"><a href="#p-9-26" title="Пункт 9.26">9.26</a></span><div class="ctext">Расчет оснований, фундаментов и самих опор следует производить по потере несущей способности (прочности и устойчивости положения) или непригодности к нормальной эксплуатации, связанной с разрушением их элементов или недопустимо большими деформациями опор, опорных частей, элементов пролетных строений или трубопровода.</div></div>
+<div class="clause" id="p-9-27" data-s data-n="9.27"><button class="acopy" data-id="p-9-27" title="Скопировать ссылку на пункт 9.27">⧉</button><span class="cnum"><a href="#p-9-27" title="Пункт 9.27">9.27</a></span><div class="ctext">Опоры (включая основания и фундаменты) и опорные части следует рассчитывать на передаваемые трубопроводом и вспомогательными конструкциями вертикальные и горизонтальные (продольные и поперечные) усилия и изгибающие моменты, определяемые от расчетных нагрузок и воздействий в наиболее невыгодных их сочетаниях с учетом возможных смещений опор и опорных частей в процессе эксплуатации.</div></div>
+<p class="bp">При расчете опор следует учитывать глубину промерзания или оттаивания грунта, деформации грунта (пучение и просадка), а также возможные изменения свойств грунта (в пределах восприятия нагрузок) в зависимости от времени года, температурного режима, осушения или обводнения участков, прилегающих к трассе, и других условий.</p>
+<div class="clause" id="p-9-28" data-s data-n="9.28"><button class="acopy" data-id="p-9-28" title="Скопировать ссылку на пункт 9.28">⧉</button><span class="cnum"><a href="#p-9-28" title="Пункт 9.28">9.28</a></span><div class="ctext">Нагрузки на опоры, возникающие от воздействия ветра и от изменений длины трубопроводов под влиянием внутреннего давления и изменения температуры стенок труб, должны определяться в зависимости от принятой системы прокладки и компенсации продольных деформаций трубопроводов с учетом сопротивлений перемещениям трубопровода на опорах.</div></div>
+<p class="bp">На уклонах местности и на участках со слабонесущими грунтами следует применять системы прокладок надземных трубопроводов с неподвижными опорами, испытывающими минимальные нагрузки, например, прокладку змейкой с неподвижными опорами, расположенными в вершинах звеньев по одну сторону от воздушной оси трассы.</p>
+<div class="clause" id="p-9-29" data-s data-n="9.29"><button class="acopy" data-id="p-9-29" title="Скопировать ссылку на пункт 9.29">⧉</button><span class="cnum"><a href="#p-9-29" title="Пункт 9.29">9.29</a></span><div class="ctext">Нагрузки на неподвижные (мертвые) опоры надземных балочных систем трубопроводов следует принимать равными сумме усилий, передающихся на опору от примыкающих участков трубопровода, если эти усилия направлены в одну сторону, и разности усилий, если эти усилия направлены в разные стороны. В последнем случае меньшая из нагрузок принимается с коэффициентом, равным 0,8.</div></div>
+<div class="clause" id="p-9-30" data-s data-n="9.30"><button class="acopy" data-id="p-9-30" title="Скопировать ссылку на пункт 9.30">⧉</button><span class="cnum"><a href="#p-9-30" title="Пункт 9.30">9.30</a></span><div class="ctext">Продольно-подвижные и свободноподвижные опоры балочных надземных систем трубопроводов следует рассчитывать на совместное действие вертикальной нагрузки и горизонтальных сил или расчетных перемещений (при неподвижном закреплении трубопроводов к опоре, когда его перемещение происходит за счет изгиба стойки). При определении горизонтальных усилий на подвижные опоры необходимо принимать максимальное значение коэффициента трения.</div></div>
+<p class="bp">В прямолинейных балочных системах без компенсации продольных деформаций необходимо учитывать возможное отклонение трубопровода от прямой. Возникающее в результате этого расчетное горизонтальное усилие от воздействия температуры и внутреннего давления, действующее на промежуточную опору перпендикулярно оси трубопровода, следует принимать равным 0,01 величины максимального эквивалентного продольного усилия в трубопроводе.</p>
+<div class="clause" id="p-9-31" data-s data-n="9.31"><button class="acopy" data-id="p-9-31" title="Скопировать ссылку на пункт 9.31">⧉</button><span class="cnum"><a href="#p-9-31" title="Пункт 9.31">9.31</a></span><div class="ctext">При расчете опор арочных систем, анкерных опор висячих и других систем следует производить расчет на возможность опрокидывания и сдвиг.</div></div>
+<h4 class="subhead">Особенности расчета трубопроводов в сейсмических условиях</h4>
+<div class="clause" id="p-9-32" data-s data-n="9.32"><button class="acopy" data-id="p-9-32" title="Скопировать ссылку на пункт 9.32">⧉</button><span class="cnum"><a href="#p-9-32" title="Пункт 9.32">9.32</a></span><div class="ctext">Расчет трубопроводов на прочность с учетом сейсмических воздействий должен производиться: надземных трубопроводов - при сейсмичности района свыше 6 баллов;</div></div>
+<ul class="cl"><li>подземных трубопроводов - при сейсмичности района свыше 8 баллов.</li></ul>
+<div class="clause" id="p-9-33" data-s data-n="9.33"><button class="acopy" data-id="p-9-33" title="Скопировать ссылку на пункт 9.33">⧉</button><span class="cnum"><a href="#p-9-33" title="Пункт 9.33">9.33</a></span><div class="ctext">Трубопроводы должны рассчитываться на основные и особые сочетания нагрузок согласно <a class="std" href="sp-14-13330-2018.html">СП 14.13330</a>.</div></div>
+<p class="bp">Трубопроводы и их элементы должны рассчитываться: на условные статические нагрузки, определяемые с учетом сейсмического воздействия. При этом предельные состояния должны приниматься как для трубопроводов, прокладываемых вне сейсмических районов; на сейсмические воздействия, получаемые на основании анализа записей сейсмометрических станций (в виде акселерограмм, велосиграмм, сейсмограмм), ранее имевших место землетрясений в районе строительства или аналогичных по сейсмическим условиям местностях. Величины принимаемых максимальных расчетных ускорений по акселерограммам должны быть не менее указанных в таблице 10.</p>
+<p class="bp">Таблица 10</p>
+<figure class="tbl"><table><thead><tr><th>Сила землетрясения, баллы</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead><tbody><tr><td>Сейсмическое ускорение, см/с 2</td><td>100</td><td>200</td><td>400</td><td>800</td></tr></tbody></table></figure>
+<div class="clause" id="p-9-34" data-s data-n="9.34"><button class="acopy" data-id="p-9-34" title="Скопировать ссылку на пункт 9.34">⧉</button><span class="cnum"><a href="#p-9-34" title="Пункт 9.34">9.34</a></span><div class="ctext">Расчет подземных трубопроводов и трубопроводов в насыпи должен производиться на воздействие сейсмической волны, направленной вдоль продольной оси трубопровода.</div></div>
+<p class="bp">Расчет подземных трубопроводов и трубопроводов в насыпи на действие сейсмических нагрузок, направленных по нормали к продольной оси трубопровода не производится.</p>
+<div class="clause" id="p-9-35" data-s data-n="9.35"><button class="acopy" data-id="p-9-35" title="Скопировать ссылку на пункт 9.35">⧉</button><span class="cnum"><a href="#p-9-35" title="Пункт 9.35">9.35</a></span><div class="ctext">Расчет надземных трубопроводов на опорах должен производиться на действие сейсмических сил, направленных: вдоль оси трубопровода, при этом определяются величины напряжений в трубопроводе, а также производится проверка конструкций опор на действие горизонтальных сейсмических нагрузок; по нормали к продольной оси трубопровода (в вертикальной и горизонтальной плоскостях), при этом должны определяться величины смещений трубопровода и достаточность длины ригеля, при которой не произойдет сброса трубопровода с опоры, дополнительные напряжения в трубопроводе, а также проверка конструкции опор на действие горизонтальных и вертикальных сейсмических нагрузок.</div></div>
+<p class="bp">Дополнительно необходимо проводить поверочный расчет трубопровода на нагрузки, возникающие при взаимном смещении опор.</p></section>
+<section class="sec" id="pril-a"><h2><span class="num">А</span>Приложение А. (рекомендуемое)</h2>
+<h4 class="subhead">Конструктивные решения соединительных деталей трубопроводов</h4>
+<p class="bp">Значения коэффициентов несущей способности, определяемые согласно 8.3, следует учитывать в расчетах для следующих решений соединительных деталей.</p>
+<p class="bp">А.1 Равнопроходные и переходные тройниковые соединения (тройники): бесшовные, получаемые выдавливанием или экструзией ответвления в горячем состоянии, и штампосварные, получаемые сваркой по образующим двух несимметричных частей, одна из которых имеет цельноштампованное ответвление (рисунок А.1, а ). Радиус rtee должен быть не менее толщины стенки тройника; сварные, получаемые путем врезки одной трубы (или трубной обечайки) в другую под прямым углом (рисунок А.1, б ), и тройники сварные, усиленные накладками (рисунок А.1, в ), которые целесообразно применять при de 1  300 мм. При этом для тройников с отношением диаметров ответвления к магистрали de 2/ de 1 &amp;lt; 0,2 накладки не ставятся, а при de 2/ de 1 &amp;lt; 0,5 накладка ставится только на магистрали. Ширина накладок (рисунок А.1, в ) должна быть на магистральной части тройника bmai = 0,4 de 1, на ответвлении blat = 0,3 de 2. Толщина накладок должна быть равна толщине стенки магистральной части тройника. а ) бесшовный и штампосварной; б ) сварной без усиливающих элементов; в ) сварной, усиленный накладками; 1 - магистральная часть тройника; 2 - ответвление; 3 накладка</p>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-3.jpg" loading="lazy" alt="Рисунок 3 из оригинального издания СП 33.13330.2012"></figure>
+<p class="bp">Рисунок А.1 - Тройники</p>
+<p class="bp">А.2 Концентрические штампованные и штампосварные переходы, получаемые путем горячей штамповки (осадки) из цилиндрической заготовки или штамповки и сварки двух симметричных заготовок (рисунок А.2). Величина угла α должна быть не более 15  .</p>
+<p class="bp">Рисунок А.2 - Концентрический переход</p>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-4.jpg" loading="lazy" alt="Рисунок 4 из оригинального издания СП 33.13330.2012"></figure>
+<p class="bp">А.3 Заглушки (днища) эллиптические (рисунок А.3), получаемые горячей штамповкой и имеющие высоту эллиптической части h не менее 0,2 диаметра заглушки.</p>
+<p class="bp">Рисунок А.3 - Заглушка эллиптическая</p>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-5.jpg" loading="lazy" alt="Рисунок 5 из оригинального издания СП 33.13330.2012"></figure>
+<p class="bp">А.4 Отводы бесшовные, получаемые путем горячей протяжки трубных заготовок, и отводы штампосварные, получаемые сваркой из двух горячештампованных симметричных заготовок (рисунок А.4).</p>
+<p class="bp">Рисунок А.4 - Отвод бесшовный и штампосварной</p>
+<figure class="fig"><img src="img/sp-33-13330-2012/fig-6.jpg" loading="lazy" alt="Рисунок 6 из оригинального издания СП 33.13330.2012"></figure>
+</section>
+<section class="sec" id="biblio"><h2>Библиография</h2><ol class="biblio"><li id="bib-1" data-s data-n="[1]"><span class="bibn">[1]</span> ПБ 10-573-03 Правила устройства и безопасной эксплуатации трубопроводов пара и горячей воды Ключевые слова: стальной трубопровод, давление, нагрузка, воздействие, прочность, устойчивость, толщина стенки, соединительные детали.</li></ol></section>
+
+
+<footer class="doc-foot">
+  <p>Текст свода правил — © Минстрой России. Интерактивная вёрстка, навигация и справочные
+  материалы — <a href="https://komplid.ru/">Komplid</a>, платформа для строительной документации.</p>
+  <p>Нашли неточность распознавания? Напишите на hello@komplid.ru — исправим.</p>
+</footer>
+</main>
+</div>
+<script>
+(function(){
+  // Тема
+  var tbtn=document.getElementById('themeBtn');
+  tbtn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',cur);
+    try{localStorage.setItem('komplid-theme',cur)}catch(e){}
+  });
+  // Прогресс чтения
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+  // Мобильное оглавление
+  var toc=document.getElementById('toc'),tt=document.getElementById('tocToggle');
+  tt.addEventListener('click',function(){toc.classList.toggle('open')});
+  toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
+  // Сворачиваемое оглавление: шевроны
+  toc.querySelectorAll('.tw').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      var li=b.closest('li'),ul=li&&li.querySelector(':scope > ul.sub');
+      if(!ul)return;
+      ul.hidden=!ul.hidden;
+      b.classList.toggle('open',!ul.hidden);
+      if(!ul.hidden){ul.dataset.manual='1'}else{delete ul.dataset.manual}
+    });
+  });
+  function twOf(ul){
+    var li=ul.parentElement;
+    return li&&li.querySelector(':scope > .trow > .tw');
+  }
+  function expandBranch(a){
+    var p=a.parentElement;
+    while(p&&p!==toc){
+      if(p.classList&&p.classList.contains('sub')&&p.hidden){
+        p.hidden=false;
+        var tw=twOf(p);if(tw)tw.classList.add('open');
+      }
+      p=p.parentElement;
+    }
+  }
+  // Scroll-spy: подсветка активного раздела + авто-раскрытие его ветки
+  // (ветки, раскрытые вручную, не сворачиваем)
+  var links={},heads=document.querySelectorAll('.sec[id],.subsec[id]');
+  toc.querySelectorAll('a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  var active=null;
+  function setActive(a){
+    if(active===a)return;
+    if(active)active.classList.remove('active');
+    a.classList.add('active');active=a;
+    toc.querySelectorAll('ul.sub:not([hidden])').forEach(function(u){
+      if(u.dataset.manual==='1')return;
+      if(u.contains(a))return;
+      u.hidden=true;
+      var tw=twOf(u);if(tw)tw.classList.remove('open');
+    });
+    expandBranch(a);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting){
+        var a=links[en.target.id];
+        if(a)setActive(a);
+      }
+    });
+  },{rootMargin:'0px 0px -75% 0px'});
+  heads.forEach(function(s){io.observe(s)});
+  // при заходе по прямой ссылке — раскрыть ветку цели
+  if(location.hash){
+    var t0=toc.querySelector('a[href="'+location.hash+'"]');
+    if(t0)expandBranch(t0);
+  }
+  // Копирование якорной ссылки
+  document.querySelectorAll('.acopy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var url=location.origin+location.pathname+'#'+b.getAttribute('data-id');
+      (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject())
+        .catch(function(){var i=document.createElement('input');i.value=url;
+          document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();})
+        .finally(function(){b.textContent='✓';setTimeout(function(){b.textContent='⧉'},1200)});
+    });
+  });
+  // Подсветка цели перехода
+  function flash(){
+    var el=location.hash&&document.getElementById(location.hash.slice(1));
+    if(el&&el.classList.contains('clause')){el.classList.add('flash');
+      setTimeout(function(){el.classList.remove('flash')},1600)}
+  }
+  addEventListener('hashchange',flash);flash();
+  // Поиск по документу (DOM-индекс, без внешних запросов).
+  // Морфология по-простому: слова длиннее 5 символов усекаются на 2 символа
+  // окончания — «скрытые работы» находит «скрытых работ».
+  var input=document.getElementById('search'),res=document.getElementById('sres');
+  var items=[].map.call(document.querySelectorAll('[data-s][id]'),function(el){
+    var t,ct=el.querySelector('.ctext');
+    if(ct){t=ct.textContent}
+    else if(el.tagName==='DT'){
+      var dd=el.nextElementSibling,ns=el.querySelector('.num');
+      t=el.textContent+(dd&&dd.tagName==='DD'?' — '+dd.textContent:'');
+      if(ns)t=t.replace(ns.textContent,'').trim();
+    } else {t=el.textContent}
+    return {el:el,id:el.id,num:el.getAttribute('data-n')||'',
+            text:t.replace(/\s+/g,' ').trim()};
+  });
+  function norm(s){return s.toLowerCase().replace(/ё/g,'е')}
+  function stems(q){
+    return norm(q).split(/[^a-zа-я0-9.\-]+/).filter(function(w){return w.length>=2})
+      .map(function(w){return w.length>5?w.slice(0,-2):w});
+  }
+  var t=null;
+  input.addEventListener('input',function(){
+    clearTimeout(t);t=setTimeout(run,120);
+  });
+  function run(){
+    var q=input.value.trim();res.innerHTML='';
+    if(q.length<3)return;
+    var st=stems(q);if(!st.length)return;
+    var hits=[],i,it,txt,pos,ok,j;
+    for(i=0;i<items.length&&hits.length<80;i++){
+      it=items[i];txt=norm(it.text);ok=true;pos=-1;
+      for(j=0;j<st.length;j++){
+        var p=txt.indexOf(st[j]);
+        if(p<0){ok=false;break}
+        if(pos<0||p<pos)pos=p;
+      }
+      if(ok)hits.push({it:it,pos:pos,len:st[0].length});
+    }
+    var frag=document.createDocumentFragment();
+    hits.slice(0,25).forEach(function(h){
+      var d=document.createElement('div');d.className='hit';
+      var mlen=Math.max(h.len,3);
+      var s=Math.max(0,h.pos-38),snip=h.it.text.slice(s,h.pos),
+          match=h.it.text.slice(h.pos,h.pos+mlen),
+          tail=h.it.text.slice(h.pos+mlen,h.pos+mlen+60);
+      d.innerHTML=(h.it.num?'<span class="n">'+h.it.num+'</span> ':'')+
+        (s>0?'…':'')+esc(snip)+'<mark>'+esc(match)+'</mark>'+esc(tail)+'…';
+      d.addEventListener('click',function(){
+        location.hash=h.it.id;h.it.el.scrollIntoView({behavior:'smooth',block:'center'});
+        h.it.el.classList.add('flash');setTimeout(function(){h.it.el.classList.remove('flash')},1600);
+        toc.classList.remove('open');
+      });
+      frag.appendChild(d);
+    });
+    if(hits.length>25){var m=document.createElement('div');m.className='more';
+      m.textContent='Показаны 25 из '+hits.length+' совпадений — уточните запрос';frag.appendChild(m)}
+    if(!hits.length){var z=document.createElement('div');z.className='more';
+      z.textContent='Ничего не найдено';frag.appendChild(z)}
+    res.appendChild(frag);
+  }
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+})();
+</script>
+</body>
+</html>
