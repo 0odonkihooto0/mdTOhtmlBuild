@@ -169,8 +169,10 @@ class SpParser:
             "intro": [],          # блоки «Введения»
             "sections": [],       # дерево разделов
             "glossary": [],       # термины §3
+            "glossaryIntro": "",  # вводная фраза раздела терминов
             "appendices": [],
             "biblio": [],
+            "trailing": [],       # хвост: УДК, ОКС, таблица «Исполнитель»
             "keywords": "",
             "quality": {"formulaStubs": raw.count("formula-not-decoded"),
                          "imageStubs": raw.count("<!-- image -->"),
@@ -188,6 +190,7 @@ class SpParser:
         cur_appendix: dict | None = None
         expected_section = 1
         pending_num: str | None = None      # «3.53» из вырожденного заголовка
+        img_counter = 0                     # сквозная нумерация image-стабов
 
         def content_target() -> list:
             """Куда класть контент-блоки в текущем состоянии."""
@@ -206,6 +209,19 @@ class SpParser:
 
         is_terms = False  # находимся в разделе «Термины и определения»
 
+        def open_section(n1: str, title: str) -> None:
+            nonlocal cur_section, cur_sub, expected_section, state, is_terms
+            state = "body"
+            expected_section = int(n1) + 1
+            cur_section = {"num": n1, "title": title.strip(), "id": f"sec-{n1}",
+                           "blocks": [], "subs": [], "clauses": []}
+            cur_sub = None
+            doc["sections"].append(cur_section)
+            is_terms = "термины" in title.lower()
+
+        def norm_key(s: str) -> str:
+            return re.sub(r"[^0-9а-яё]+", "", s.lower())
+
         for blk in blocks:
             t = blk["t"]
 
@@ -217,14 +233,22 @@ class SpParser:
                 # колонтитулы и повторы названия — везде мусор
                 if designation and bare.startswith(designation):
                     continue
-                if bare in ("СВОД ПРАВИЛ", "Предисловие", "Сведения о своде правил",
-                            "Содержание"):
+                if bare.startswith("СВОД ПРАВИЛ") or bare in (
+                        "Предисловие", "Сведения о своде правил", "Содержание",
+                        "Актуализированная редакция", "Издание официальное"):
                     if bare == "Содержание":
                         state = "toc"
                     continue
                 if title_upper and bare.upper() == title_upper:
                     continue
-                if bare.startswith("СНиП "):
+                # повтор названия капсом, разбитый на несколько заголовков
+                # (титульный лист повторяется в середине документа)
+                cyr = re.sub(r"[^а-яА-ЯёЁ ]+", "", bare).strip()
+                if cyr and cyr == cyr.upper():
+                    key = norm_key(bare)[:18]
+                    if len(key) >= 10 and key in norm_key(meta.get("title", "")):
+                        continue
+                if bare.startswith("СНиП ") or bare.startswith("МИНИСТЕРСТВО "):
                     continue
                 if bare == "Введение":
                     state = "intro"
@@ -235,17 +259,28 @@ class SpParser:
                     continue
                 if bare.startswith("УДК"):
                     state = "trailing"
+                    doc["trailing"].append({"t": "para", "text": bare})
                     continue
                 if bare == "Исполнитель":
                     state = "trailing"
+                    doc["trailing"].append({"t": "subhead", "text": bare})
+                    continue
+                if state == "trailing":
+                    doc["trailing"].append({"t": "subhead", "text": bare})
                     continue
 
                 am = APPENDIX_RE.match(bare)
                 if am:
                     state = "appendix"
                     close_section()
-                    cur_appendix = {"letter": am.group(1),
-                                    "title": am.group(2).strip(),
+                    title = am.group(2).strip()
+                    grif = ""
+                    gm = re.fullmatch(r"\(([^)]+)\)", title)
+                    if gm:  # «Приложение А (рекомендуемое)» — гриф, не название
+                        grif = gm.group(1)
+                        title = ""
+                    cur_appendix = {"letter": am.group(1), "title": title,
+                                    "grif": grif,
                                     "id": f"pril-{_translit_letter(am.group(1))}",
                                     "subs": [], "blocks": [], "_cur_sub": None}
                     doc["appendices"].append(cur_appendix)
@@ -289,15 +324,12 @@ class SpParser:
                         continue
                     if n2 is None:
                         num = int(n1)
-                        if num == expected_section or (state != "body" and num == 1):
-                            state = "body"
-                            expected_section = num + 1
-                            cur_section = {"num": n1, "title": title.strip(),
-                                           "id": f"sec-{n1}", "blocks": [],
-                                           "subs": [], "clauses": []}
-                            cur_sub = None
-                            doc["sections"].append(cur_section)
-                            is_terms = "термины" in title.lower()
+                        # окно допуска: Docling иногда теряет заголовок раздела —
+                        # следующий номер может «перепрыгнуть» на 1-3
+                        in_window = (state == "body"
+                                     and expected_section <= num <= expected_section + 3)
+                        if in_window or (state != "body" and num == 1):
+                            open_section(n1, title)
                             continue
                         # число вне последовательности — промоутнутый мусор
                         content_target().append({"t": "para", "text": bare})
@@ -318,32 +350,57 @@ class SpParser:
 
             # ── ТАБЛИЦЫ ────────────────────────────────────────────────
             if t == "table":
-                if state in ("preamble", "toc", "trailing"):
+                if state in ("preamble", "toc"):
                     continue
                 parsed = parse_table(blk["rows"])
                 if parsed:
-                    content_target().append({"t": "table", **parsed})
+                    dest = doc["trailing"] if state == "trailing" else content_target()
+                    dest.append({"t": "table", **parsed})
                 continue
 
             # ── ПАРАГРАФЫ ──────────────────────────────────────────────
             text = blk["text"].strip()
             if not text:
                 continue
+            # стаб потерянной Docling'ом картинки → image-блок (позиция сохраняется)
+            if "<!-- image -->" in text:
+                text = text.replace("<!-- image -->", "").strip()
+                if state not in ("preamble", "toc", "trailing"):
+                    img_counter += 1
+                    content_target().append({"t": "image", "n": img_counter})
+                if not text:
+                    continue
+            # стаб нераспознанной формулы → честная плашка вместо утечки комментария
+            if "<!-- formula-not-decoded -->" in text:
+                text = text.replace("<!-- formula-not-decoded -->", "").strip()
+                if state not in ("preamble", "toc", "trailing"):
+                    content_target().append({"t": "formula-missing"})
+                if not text:
+                    continue
             if state in ("preamble", "toc"):
                 preamble_text.append(text)
                 continue
+            # «УДК: … ОКС …» бывает абзацем, а не заголовком — переключаем хвост
+            if state in ("body", "biblio", "appendix") and re.match(r"^УДК\b", text):
+                state = "trailing"
             if state == "trailing":
+                text = re.sub(r"\s*\n\s*", " ", text)
                 if text.lower().startswith("ключевые слова"):
                     doc["keywords"] = re.sub(r"^ключевые слова:\s*", "", text,
                                              flags=re.I).strip()
+                doc["trailing"].append({"t": "para", "text": text})
                 continue
             if state == "biblio":
-                bm = BIB_ITEM_RE.match(text)
+                # позиции библиографии бывают пунктами списка: «- [1] …»
+                t2 = re.sub(r"^-\s*", "", re.sub(r"\s*\n\s*", " ", text)).strip()
+                bm = BIB_ITEM_RE.match(t2)
                 if bm:
                     doc["biblio"].append({"n": int(bm.group(1)),
-                                          "text": re.sub(r"\s*\n\s*", " ", bm.group(2))})
+                                          "text": bm.group(2).strip()})
                 elif doc["biblio"]:
-                    doc["biblio"][-1]["text"] += " " + re.sub(r"\s*\n\s*", " ", text)
+                    doc["biblio"][-1]["text"] += " " + t2
+                else:
+                    doc["trailing"].append({"t": "para", "text": t2})
                 continue
 
             if pending_num:
@@ -357,7 +414,32 @@ class SpParser:
                 cur_appendix["title"] = re.sub(r"\s*\n\s*", " ", text)
                 continue
 
+            # заголовок раздела, не ставший markdown-заголовком (Docling теряет ##):
+            # строка «4 Общие положения» с ожидаемым номером — может быть склеена
+            # в один блок со следующим абзацем, поэтому отделяем первую строку
+            if state == "body":
+                first, _, rest = text.partition("\n")
+                hm = re.match(r"^(?:-\s*)?(\d{1,2})\s+([А-ЯЁ][^.:]{3,70})$", first.strip())
+                if hm and expected_section <= int(hm.group(1)) <= expected_section + 2:
+                    open_section(hm.group(1), hm.group(2))
+                    text = rest.strip()
+                    if not text:
+                        continue
+
+            if re.match(r"^Дата введения\b", text):
+                em = re.search(r"(\d{4}-\d{2}-\d{2})", text)
+                if em and meta.get("approval") is None:
+                    meta["approval"] = {"effective": em.group(1)}
+                preamble_text.append(re.sub(r"\s*\n\s*", " ", text))
+                continue
+
             if is_terms:
+                plain = re.sub(r"\s*\n\s*", " ", text).lstrip("- ").strip()
+                if not doc["glossary"] and plain.lower().startswith(
+                        ("в настоящем", "в данном")):
+                    doc["glossaryIntro"] = plain
+                    content_target().append({"t": "para", "text": plain})
+                    continue
                 self._feed_term(doc["glossary"], text)
                 continue
 
@@ -375,9 +457,6 @@ class SpParser:
         if SOURCE_REF_RE.match(text):
             if glossary:
                 glossary[-1]["source"] = text.strip("[]")
-            return
-        # вводная фраза раздела
-        if text.lower().startswith("в настоящем своде правил"):
             return
         bm = BARE_NUM_RE.match(text)
         if bm:
