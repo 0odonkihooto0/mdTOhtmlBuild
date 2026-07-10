@@ -23,8 +23,9 @@ _SPACED_WORDS = ["Таблица", "Примечание", "Примечания
 # Отдельно стоящие номера страниц и римские цифры колонтитулов
 _PAGE_NUM_RE = re.compile(r"^\s*(?:\d{1,3}|[IVXLC]{1,5})\s*$")
 
-# Плоские степени единиц: «м 3 /с», «м 2 », «см 3»
-_SUPERSCRIPT_RE = re.compile(r"(?<=[а-яa-z])\s([23])(?=\s*(?:/|\)|,|\.|;|$|\s))")
+# Плоские степени единиц: «м 3 /с» → «м³/с». Только после самих единиц измерения —
+# иначе портится обычный текст («Часть 2.» ≠ «Часть²»).
+_SUPERSCRIPT_RE = re.compile(r"(?<![а-яёa-z])(мм|см|дм|км|м)\s([23])(?![0-9.,]?\d)")
 _SUP_MAP = {"2": "²", "3": "³"}
 
 
@@ -48,18 +49,19 @@ def clean_line(line: str) -> str | None:
     line = line.rstrip()
     if _PAGE_NUM_RE.match(line):
         return None
-    # разрядка ключевых слов: применяем только если в строке реально есть разрядка
+    # неразрывные и двойные пробелы схлопываем ДО поиска разрядки
+    # (markdown-таблицы не трогаем)
+    line = line.replace(" ", " ")
+    if not line.lstrip().startswith("|"):
+        line = re.sub(r"[ \t]{2,}", " ", line)
+    # разрядка ключевых слов: «Т а б л и ц а» → «Таблица»
     if " " in line:
         for word in _SPACED_WORDS:
             spaced = " ".join(word.replace(" ", ""))
             if spaced in line:
                 line = line.replace(spaced, word)
-    # неразрывные и двойные пробелы (после сохранения markdown-отступов таблиц)
-    if not line.lstrip().startswith("|"):
-        line = re.sub(r"[ \t]{2,}", " ", line)
-    line = line.replace(" ", " ")
-    # степени единиц: «м 3 /с» → «м³/с» (только после буквы, чтобы не задеть числа норм)
-    line = _SUPERSCRIPT_RE.sub(lambda m: _SUP_MAP[m.group(1)], line)
+    # степени единиц: «м 3 /с» → «м³/с» (только после единиц измерения)
+    line = _SUPERSCRIPT_RE.sub(lambda m: m.group(1) + _SUP_MAP[m.group(2)], line)
     return line
 
 

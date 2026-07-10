@@ -59,11 +59,19 @@ a:hover{text-decoration:underline}
   letter-spacing:.12em;color:var(--muted);margin:18px 0 10px;font-weight:600}
 .toc ul{list-style:none}
 .toc li{margin:1px 0}
-.toc a{color:var(--ink);display:block;padding:4px 9px;border-radius:var(--r-2);
-  font-size:12.8px;line-height:1.35}
+.toc .trow{display:flex;align-items:flex-start}
+.toc .tw{flex:none;width:17px;height:20px;margin-top:3px;border:none;background:none;
+  color:var(--muted);cursor:pointer;font-size:9px;padding:0;transition:transform .15s}
+.toc .tw::before{content:"▸"}
+.toc .tw.open{transform:rotate(90deg);color:var(--accent-ink)}
+.toc .tw-sp{flex:none;width:17px}
+.toc a{flex:1;min-width:0;color:var(--ink);display:block;padding:4px 8px 4px 2px;
+  border-radius:var(--r-2);font-size:12.8px;line-height:1.35}
 .toc a:hover{background:var(--accent-soft);color:var(--accent-ink);text-decoration:none}
 .toc a.active{background:var(--accent-soft);color:var(--accent-ink);font-weight:600}
-.toc .sub a{padding-left:22px;font-size:12.3px;color:var(--muted)}
+.toc ul.sub{margin-left:15px;border-left:1px solid var(--border);padding-left:2px}
+.toc ul.sub a{font-size:12.2px;color:var(--muted)}
+.toc ul.sub ul.sub a{font-size:11.8px}
 .toc .num{font-family:var(--font-mono);font-size:10.5px;color:var(--accent);margin-right:6px}
 #search{width:100%;padding:8px 11px;border:1px solid var(--border);border-radius:var(--r-2);
   background:var(--card);color:var(--ink);font:inherit;font-size:13px}
@@ -121,6 +129,11 @@ h4.subhead{font-size:14.5px;font-weight:650;margin:20px 0 10px;color:var(--accen
 p.bp{margin:0 0 12px;font-size:14.5px}
 ul.cl{margin:2px 0 14px 84px;font-size:14.2px}
 ul.cl li{margin:0 0 7px;padding-left:2px}
+figure.fig{margin:20px 0;border:1px solid var(--border);border-radius:var(--r-3);
+  overflow:hidden;box-shadow:var(--shadow-1);background:#fff}
+figure.fig img{display:block;max-width:100%;height:auto;margin:0 auto}
+.img-missing{background:var(--inset);border:1px dashed var(--border);border-radius:var(--r-3);
+  padding:14px 18px;margin:16px 0;font-size:13px;color:var(--muted)}
 figure.tbl{margin:20px 0;overflow-x:auto;border:1px solid var(--border);
   border-radius:var(--r-3);box-shadow:var(--shadow-1)}
 figure.tbl table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
@@ -138,8 +151,10 @@ dl.glossary .src{display:block;font-family:var(--font-mono);font-size:11px;color
 .std{font-family:var(--font-mono);font-size:12.5px;color:var(--ok);white-space:nowrap}
 a.std:hover{text-decoration:underline}
 a.bibref{font-family:var(--font-mono);font-size:12px}
-ol.biblio{margin:14px 0 0 22px;font-size:13.5px}
-ol.biblio li{margin-bottom:10px;scroll-margin-top:70px}
+ol.biblio{margin:14px 0 0;font-size:13.5px;list-style:none}
+ol.biblio li{margin-bottom:10px;scroll-margin-top:70px;padding-left:44px;position:relative}
+ol.biblio .bibn{position:absolute;left:0;font-family:var(--font-mono);font-size:12px;
+  color:var(--accent);font-weight:600}
 .cta{display:flex;gap:14px;align-items:center;background:var(--accent-soft);
   border:1px solid color-mix(in oklch,var(--accent) 35%,transparent);
   border-radius:var(--r-3);padding:16px 20px;margin:22px 0;font-size:14px}
@@ -208,19 +223,62 @@ JS = r"""
   var toc=document.getElementById('toc'),tt=document.getElementById('tocToggle');
   tt.addEventListener('click',function(){toc.classList.toggle('open')});
   toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
-  // Scroll-spy
+  // Сворачиваемое оглавление: шевроны
+  toc.querySelectorAll('.tw').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      var li=b.closest('li'),ul=li&&li.querySelector(':scope > ul.sub');
+      if(!ul)return;
+      ul.hidden=!ul.hidden;
+      b.classList.toggle('open',!ul.hidden);
+      if(!ul.hidden){ul.dataset.manual='1'}else{delete ul.dataset.manual}
+    });
+  });
+  function twOf(ul){
+    var li=ul.parentElement;
+    return li&&li.querySelector(':scope > .trow > .tw');
+  }
+  function expandBranch(a){
+    var p=a.parentElement;
+    while(p&&p!==toc){
+      if(p.classList&&p.classList.contains('sub')&&p.hidden){
+        p.hidden=false;
+        var tw=twOf(p);if(tw)tw.classList.add('open');
+      }
+      p=p.parentElement;
+    }
+  }
+  // Scroll-spy: подсветка активного раздела + авто-раскрытие его ветки
+  // (ветки, раскрытые вручную, не сворачиваем)
   var links={},heads=document.querySelectorAll('.sec[id],.subsec[id]');
   toc.querySelectorAll('a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
   var active=null;
+  function setActive(a){
+    if(active===a)return;
+    if(active)active.classList.remove('active');
+    a.classList.add('active');active=a;
+    toc.querySelectorAll('ul.sub:not([hidden])').forEach(function(u){
+      if(u.dataset.manual==='1')return;
+      if(u.contains(a))return;
+      u.hidden=true;
+      var tw=twOf(u);if(tw)tw.classList.remove('open');
+    });
+    expandBranch(a);
+  }
   var io=new IntersectionObserver(function(es){
     es.forEach(function(en){
       if(en.isIntersecting){
         var a=links[en.target.id];
-        if(a){if(active)active.classList.remove('active');a.classList.add('active');active=a;}
+        if(a)setActive(a);
       }
     });
   },{rootMargin:'0px 0px -75% 0px'});
   heads.forEach(function(s){io.observe(s)});
+  // при заходе по прямой ссылке — раскрыть ветку цели
+  if(location.hash){
+    var t0=toc.querySelector('a[href="'+location.hash+'"]');
+    if(t0)expandBranch(t0);
+  }
   // Копирование якорной ссылки
   document.querySelectorAll('.acopy').forEach(function(b){
     b.addEventListener('click',function(){
@@ -316,10 +374,12 @@ SECTION_MENTION_RE = re.compile(r"(раздел[еауом]{0,2}\s+)(\d{1,2})(?!
 
 class Renderer:
     def __init__(self, doc: dict, overlay: dict | None = None,
-                 registry: dict | None = None):
+                 registry: dict | None = None,
+                 images: dict[int, str] | None = None):
         self.doc = doc
         self.ov = overlay or {}
         self.registry = registry or {}
+        self.images = images or {}
         meta = doc["meta"]
         self.designation = meta.get("designation", "")
         self.slug = meta.get("slug", "")
@@ -380,7 +440,24 @@ class Renderer:
                 out.append(f'<h4 class="subhead">{H.escape(b["text"])}</h4>')
             elif t == "table":
                 out.append(self._table(b))
+            elif t == "image":
+                out.append(self._image(b))
+            elif t == "formula-missing":
+                out.append('<div class="img-missing">Формула из оригинального документа '
+                           'не распознана при конвертации. Сверьтесь с '
+                           '<a href="https://minstroyrf.gov.ru/" rel="noopener">официальным '
+                           'изданием</a>.</div>')
         return "\n".join(out)
+
+    def _image(self, b: dict) -> str:
+        src = self.images.get(b["n"])
+        if src:
+            return (f'<figure class="fig"><img src="{H.escape(src)}" loading="lazy" '
+                    f'alt="Рисунок {b["n"]} из оригинального издания '
+                    f'{H.escape(self.designation)}"></figure>')
+        return ('<div class="img-missing">Здесь в оригинальном документе — рисунок или '
+                'форма, не распознанные при конвертации. Сверьтесь с '
+                '<a href="https://minstroyrf.gov.ru/" rel="noopener">официальным изданием</a>.</div>')
 
     def _clause(self, b: dict) -> str:
         cid, num = b["id"], b["num"]
@@ -404,26 +481,49 @@ class Renderer:
                 f"</table></figure>")
 
     # ── крупные части страницы ───────────────────────────────────────────────
+    def _toc_li(self, href: str, num: str, label: str,
+                children: list[str]) -> str:
+        n = f'<span class="num">{num}</span>' if num else ""
+        link = f'<a href="#{href}">{n}{H.escape(label)}</a>'
+        if children:
+            return (f'<li><div class="trow">'
+                    f'<button class="tw" aria-label="Развернуть"></button>{link}</div>'
+                    f'<ul class="sub" hidden>{"".join(children)}</ul></li>')
+        return f'<li><div class="trow"><span class="tw-sp"></span>{link}</div></li>'
+
+    def _toc_clauses(self, blocks: list) -> list[str]:
+        out: list[str] = []
+        for b in blocks:
+            if b["t"] == "clause":
+                out.append(self._toc_li(b["id"], b["num"],
+                                        _shorten(b["text"], 40), []))
+        return out
+
     def render_toc(self) -> str:
         li: list[str] = []
         if self.doc["intro"]:
-            li.append('<li><a href="#vvedenie">Введение</a></li>')
+            li.append(self._toc_li("vvedenie", "", "Введение", []))
         for s in self.doc["sections"]:
-            li.append(f'<li><a href="#{s["id"]}"><span class="num">{s["num"]}</span>'
-                      f'{H.escape(s["title"])}</a>')
-            if s["subs"]:
-                subs = "".join(
-                    f'<li><a href="#{sub["id"]}"><span class="num">{sub["num"]}</span>'
-                    f'{H.escape(sub["title"])}</a></li>' for sub in s["subs"])
-                li.append(f'<ul class="sub">{subs}</ul>')
-            li.append("</li>")
+            kids: list[str] = []
+            if "термины" in s["title"].lower() and self.doc["glossary"]:
+                kids = [self._toc_li(f"term-{g['num'].replace('.', '-')}",
+                                     g["num"], _shorten(g["term"], 40), [])
+                        for g in self.doc["glossary"] if g["num"] and g["term"]]
+            else:
+                kids = self._toc_clauses(s["blocks"])
+                for sub in s["subs"]:
+                    kids.append(self._toc_li(sub["id"], sub["num"], sub["title"],
+                                             self._toc_clauses(sub["blocks"])))
+            li.append(self._toc_li(s["id"], s["num"], s["title"], kids))
         for a in self.doc["appendices"]:
-            li.append(f'<li><a href="#{a["id"]}"><span class="num">{a["letter"]}</span>'
-                      f'{H.escape(_shorten(a["title"], 60))}</a></li>')
+            kids = [self._toc_li(sub["id"], sub["num"], _shorten(sub["title"], 40), [])
+                    for sub in a["subs"]]
+            li.append(self._toc_li(a["id"], a["letter"],
+                                   _shorten(a["title"], 60), kids))
         if self.doc["biblio"]:
-            li.append('<li><a href="#biblio">Библиография</a></li>')
+            li.append(self._toc_li("biblio", "", "Библиография", []))
         if self.ov.get("faq"):
-            li.append('<li><a href="#faq">Частые вопросы</a></li>')
+            li.append(self._toc_li("faq", "", "Частые вопросы", []))
         return "".join(li)
 
     def render_sections(self) -> str:
@@ -454,6 +554,8 @@ class Renderer:
 
     def _glossary(self) -> str:
         items: list[str] = []
+        intro = self.doc.get("glossaryIntro")
+        prefix = f'<p class="bp">{H.escape(intro)}</p>' if intro else ""
         for g in self.doc["glossary"]:
             if not g["term"] and not g["def"]:
                 continue
@@ -465,14 +567,16 @@ class Renderer:
             items.append(f'<dt{attr} data-s data-n="{g["num"]}">{num}'
                          f'{H.escape(g["term"])}</dt>'
                          f"<dd>{self.enrich(g['def'])}{src}</dd>")
-        return f'<dl class="glossary">{"".join(items)}</dl>'
+        return f'{prefix}<dl class="glossary">{"".join(items)}</dl>'
 
     def render_appendices(self) -> str:
         out: list[str] = []
         for a in self.doc["appendices"]:
+            grif = f' <small style="font-weight:400;color:var(--muted)">({H.escape(a["grif"])})</small>' \
+                if a.get("grif") else ""
             out.append(f'<section class="sec" id="{a["id"]}">'
                        f'<h2><span class="num">{a["letter"]}</span>'
-                       f'Приложение {a["letter"]}. {H.escape(a["title"])}</h2>')
+                       f'Приложение {a["letter"]}{grif}. {H.escape(a["title"])}</h2>')
             out.append(self.render_blocks(a["blocks"]))
             for sub in a["subs"]:
                 sid = sub["id"]
@@ -486,8 +590,11 @@ class Renderer:
     def render_biblio(self) -> str:
         if not self.doc["biblio"]:
             return ""
-        items = "".join(f'<li id="bib-{b["n"]}" value="{b["n"]}">{H.escape(b["text"])}</li>'
-                        for b in self.doc["biblio"])
+        # номер [N] — видимым текстом: устойчиво к копированию и цитированию
+        items = "".join(
+            f'<li id="bib-{b["n"]}" data-s data-n="[{b["n"]}]">'
+            f'<span class="bibn">[{b["n"]}]</span> {H.escape(b["text"])}</li>'
+            for b in self.doc["biblio"])
         return (f'<section class="sec" id="biblio"><h2>Библиография</h2>'
                 f'<ol class="biblio">{items}</ol></section>')
 
@@ -607,10 +714,16 @@ class Renderer:
             status_note = f'<p class="bp" style="color:var(--muted);font-size:13px">{H.escape(status["note"])}</p>'
 
         docinfo = ""
-        if self.doc.get("preamble"):
-            paras = "".join(f"<p>{H.escape(p)}</p>" for p in self.doc["preamble"][:14])
+        if self.doc.get("preamble") or self.doc.get("trailing"):
+            paras = "".join(f"<p>{H.escape(re.sub(chr(10), ' ', p))}</p>"
+                            for p in self.doc.get("preamble", []))
+            tail = self.render_blocks(self.doc.get("trailing", []))
+            kw = ""
+            if self.doc.get("keywords") and "ключевые слова" not in tail.lower():
+                kw = f'<p><b>Ключевые слова:</b> {H.escape(self.doc["keywords"])}</p>'
             docinfo = (f'<details class="docinfo"><summary>О документе: разработчики, '
-                       f'утверждение, регистрация</summary><div class="body">{paras}</div></details>')
+                       f'утверждение, регистрация, ключевые слова</summary>'
+                       f'<div class="body">{paras}{tail}{kw}</div></details>')
 
         head_meta = [
             '<meta charset="utf-8">',

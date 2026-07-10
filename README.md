@@ -12,13 +12,21 @@
 | `normative-md/` | Корпус: 323 СП в markdown (конвертация Docling из PDF) + логи и манифест конвертации |
 | `sp-builder/` | **Генератор** md → самодостаточный интерактивный HTML (Python 3.11, stdlib). См. [sp-builder/README.md](sp-builder/README.md) |
 | `sp-html/` | Готовые страницы. Эталон: [СП 48.13330.2019 «Организация строительства»](sp-html/sp-48-13330-2019.html) + его JSON-модель |
+| `downloads_faufcc/` | Исходные PDF (324 шт.) — источник для восстановления картинок, выброшенных Docling'ом |
 | `pdf-to-html/` | Ранний прототип конвертера (PDF-пайплайн, две темы). Дизайн-токены переехали в sp-builder |
 
 ## Быстрый старт
 
 ```bash
+# один документ
 python3 sp-builder/build.py "normative-md/SP_48.13330.2019_«СНиП 12-01-2004 Организация строительства».md"
 # → sp-html/sp-48-13330-2019.html  (открыть в браузере)
+
+# весь корпус одной командой: все .md из папки → HTML в папку
+python3 sp-builder/build.py --all -i normative-md -o output
+# → output/*.html + output/build-report.json (метрики качества по каждому документу)
+
+# для восстановления картинок из PDF: pip install pymupdf (опционально)
 ```
 
 ## Связанные репозитории
