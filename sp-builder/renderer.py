@@ -386,6 +386,29 @@ class Renderer:
         self.appendix_letters = {a["letter"]: a["id"] for a in doc["appendices"]}
         self.section_nums = {s["num"]: s["id"] for s in doc["sections"]}
         self.biblio_ns = {b["n"] for b in doc["biblio"]}
+        # в текстах СП обычно упоминаются без года («СП 126.13330») —
+        # индекс по базовому обозначению для кросс-ссылок
+        self._by_base: dict[str, dict] = {}
+        ambiguous: set[str] = set()
+        for key, entry in self.registry.items():
+            base = re.sub(r"\.(19|20)\d{2}$", "", key)
+            if base == key:
+                continue
+            if base in self._by_base:
+                ambiguous.add(base)
+            else:
+                self._by_base[base] = entry
+        for base in ambiguous:
+            self._by_base.pop(base, None)
+
+    def _registry_lookup(self, designation: str) -> dict | None:
+        entry = self.registry.get(designation)
+        if entry:
+            return entry
+        # с явным (несовпавшим) годом не линкуем — это другая редакция
+        if re.search(r"\.(19|20)\d{2}$", designation):
+            return None
+        return self._by_base.get(designation)
 
     # ── инлайн-обогащение ────────────────────────────────────────────────────
     def enrich(self, text: str) -> str:
@@ -403,8 +426,8 @@ class Renderer:
             trail = m.group(2)[len(m.group(2).rstrip('.,;')):]
             full = H.unescape(label)
             if full.startswith("СП ") and not full.startswith(self.designation):
-                entry = self.registry.get(full.split(",")[0])
-                if entry and entry.get("published"):
+                entry = self._registry_lookup(full.split(",")[0])
+                if entry and entry.get("published") and entry.get("slug") != self.slug:
                     return (f'<a class="std" href="{entry["slug"]}.html">{label}</a>' + trail)
             return f'<span class="std">{label}</span>{trail}'
         esc = STD_RE.sub(std, esc)

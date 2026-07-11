@@ -145,8 +145,10 @@ def audit_coverage(src_lines: list[str], html_text: str, meta: dict) -> list[str
 
 def build_one(md_path: Path, out_dir: Path, *, dump_json: bool = False,
               strict: bool = False, verbose: bool = False,
-              pdf_dir: Path | None = None, quiet: bool = False) -> dict:
-    registry = load_registry()
+              pdf_dir: Path | None = None, quiet: bool = False,
+              registry: dict | None = None) -> dict:
+    if registry is None:
+        registry = load_registry()
     doc = parse_file(md_path, registry)
     meta = doc["meta"]
     slug = meta["slug"]
@@ -232,11 +234,19 @@ def build_all(in_dir: Path, out_dir: Path, *, pdf_dir: Path | None,
     if not files:
         raise SystemExit(f"[x] в {in_dir} нет .md файлов")
     print(f"[i] батч: {len(files)} документов из {in_dir} → {out_dir}\n")
+    # все документы прогона окажутся в одной папке — упоминания «СП NNN»
+    # в текстах становятся рабочими кросс-ссылками (published в памяти)
+    registry = load_registry()
+    file_names = {f.name for f in files}
+    for entry in registry.values():
+        if entry.get("file") in file_names:
+            entry["published"] = True
     t0 = time.time()
     report: list[dict] = []
     for i, f in enumerate(files, 1):
         try:
-            r = build_one(f, out_dir, pdf_dir=pdf_dir, quiet=True)
+            r = build_one(f, out_dir, pdf_dir=pdf_dir, quiet=True,
+                          registry=registry)
         except Exception as e:  # не прерываем прогон
             r = {"slug": f.stem[:60], "file": f.name, "status": "fail",
                  "error": f"{type(e).__name__}: {e}"}
